@@ -4,12 +4,32 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-SwiftyJSON.xcscheme</key>
+		<key>Pods-irisCodex-Realm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-irisCodex-RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-irisCodex.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-irisCodexTests-Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-irisCodexTests-RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-irisCodexTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>590523A74F2D58509A5B1E88</key>
+		<key>27B8E7705BEDC8D6B38CC2D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFD6A5DBA972620F532F6FB4</key>
+		<key>2D28689CBE5EC2E571B96F65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>331235466260BE25F096200B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6643DA39D25A8ABF9360F202</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AAB8AC2C2C0602CF68F3E23C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B70A191346B784C81280AFEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

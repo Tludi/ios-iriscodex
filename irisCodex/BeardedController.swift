@@ -7,88 +7,93 @@
 //
 
 import UIKit
-import CoreData
+//import CoreData
+import RealmSwift
 
 
 class BeardedController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+  
   @IBOutlet weak var beardedIrisTable: UITableView!
   // toggle the side menu with the navigation button
   @IBAction func toggleMenu(sender: AnyObject) { toggleSideMenuView() }
   @IBAction func addIrisButton(sender: AnyObject) {
-    addNewItem()
+  addNewItem()
   }
   
-  
-  // access the core data context
-  let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-  // create the irises array
-  var irises = [Iris]()
-  
+  @IBAction func clearDatabase(sender: AnyObject) {
+    clearDatabase()
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    // put sample data into irises array if managedObjectContext exists
-      if let moc = self.managedObjectContext {
-        var irises = [
-        ("Bearded", "Yellow Rose in twilight moon", "Aitken", "2012", true, true, true, true, true, true, "SIB", true),
-        ("Beardless", "Bearded Lilly", "Ludi", "2000", true, false, true, false, true, false, "PCI", false)
-        ]
-        // loop through the irises array and put data in context
-        if irises.count == 0 {
-        for (category, name, hybridizer, year, garden1, garden2, garden3, garden4, garden5, garden6, irisType, region13) in irises {
-          Iris.createInManagedObjectContext(moc, category: category, name: name, hybridizer: hybridizer, year: year, garden1: garden1, garden2: garden2, garden3: garden3, garden4: garden4, garden5: garden5, garden6: garden6, irisType: irisType, region13: region13)
-        }  // end for loop
-      }
-      } // end if let moc
-    fetchLog() // run the fetchlog function
+    // let irises = Realm().objects(Iris)
+    
+    if self.title == nil {
+      self.title = "Bearded"
+    }
+    
   }
-  
-  func fetchLog() {
-    let fetchRequest = NSFetchRequest(entityName: "Iris")
-    // sort by name
-    let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-    fetchRequest.sortDescriptors = [sortDescriptor]
-    // filter by category
-    let predicate = NSPredicate(format: "category == %@", "Bearded")
-    fetchRequest.predicate = predicate
-    // assign fetchResults to irises array if fetchResults exists
-    if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Iris] { irises = fetchResults }
-  } // end fetchlog
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    
+//    println(self.title!)
+    self.beardedIrisTable.reloadData()
   }
   
   // setup the tableView sections and cells
   func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1}
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return irises.count }
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    let irises = Realm().objects(Iris).filter("category = '\(self.title!)'")
+    return irises.count
+  }
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    if self.title == "IrisCodex" {
+      //let irises = Realm().objects(Iris)
+      println(self.title)
+    }
+      let irises = Realm().objects(Iris).filter("category = '\(self.title!)'")
     let iris = irises[indexPath.row]
     cell.textLabel?.text = iris.name
-    cell.detailTextLabel?.text = iris.hybridizer
+    cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
     return cell
   }
-  // setup what action happens when selecting individual cell
+  
+  //setup what action happens when selecting individual cell
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let irises = Realm().objects(Iris).filter("category = '\(self.title!)'")
     let iris = irises[indexPath.row]
-    println(iris.name)
+//    println(iris)
   }
   
-  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    return true
-  }
+//  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//    return true
+//  }
   
-  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if(editingStyle == .Delete) {
-      let irisToDelete = irises[indexPath.row]
-      managedObjectContext?.deleteObject(irisToDelete)
-      self.fetchLog()
-      beardedIrisTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-      saveIris()
+//  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//    if(editingStyle == .Delete) {
+//      let realm = Realm()
+//      let irisToDelete = irises[indexPath.row]
+//      realm.write {
+//        realm.delete(irisToDelete)
+//      }
+//      beardedIrisTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//    }
+//  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "irisDetail" {
+      if let destinationController = segue.destinationViewController as? irisDetailController {
+        if let irisIndex = beardedIrisTable.indexPathForSelectedRow() {
+          let irises = Realm().objects(Iris).filter("category = '\(self.title!)'")
+          let iris = irises[irisIndex.row]
+          destinationController.singleIris = iris
+        }
+      }
     }
   }
+  
+  
   
   // let addItemAlertViewTag = 0
   // let addItemTextAlertViewTag = 1
@@ -119,19 +124,30 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
   }
   
   func saveNewIris(name: String, hybridizer: String) {
-    var newIris = Iris.createInManagedObjectContext(self.managedObjectContext!, category: "Bearded", name: name, hybridizer: hybridizer, year: "2005", garden1: true, garden2: true, garden3: true, garden4: true, garden5: true, garden6: true, irisType: "SIB", region13: true)
-    self.fetchLog()
-    if let newIrisIndex = find(irises, newIris) {
-      let newIrisIndexPath = NSIndexPath(forRow: newIrisIndex, inSection: 0)
-      beardedIrisTable.insertRowsAtIndexPaths([newIrisIndexPath], withRowAnimation: .Automatic)
-      saveIris()
+    let realm = Realm()
+    let iris = Iris()
+    iris.name = name
+    iris.hybridizer = hybridizer
+    realm.write {
+      realm.add(iris)
     }
+    self.beardedIrisTable.reloadData()
+    //self.beardedIrisTable.reloadRowsAtIndexPaths(index, withRowAnimation: UITableViewRowAnimation.Automatic )
   }
-  func saveIris() {
-    var error: NSError?
-    if(managedObjectContext!.save(&error)){
-      println(error?.localizedDescription)
+  
+  func clearDatabase() {
+    let realm = Realm()
+    let iris = Iris()
+    realm.write {
+      realm.deleteAll()
     }
+    self.beardedIrisTable.reloadData()
+    //self.beardedIrisTable.reloadRowsAtIndexPaths(index, withRowAnimation: UITableViewRowAnimation.Automatic )
   }
+  
+
+  
 }
+
+
 

@@ -7,33 +7,46 @@
 //
 
 import UIKit
+import RealmSwift
 
 class BeardlessController: UIViewController {
 
+  @IBOutlet weak var beardlessIrisTable: UITableView!
+  
   @IBAction func toggleMenu(sender: AnyObject) {
     toggleSideMenuView()
   }
+
+  let irises = Realm().objects(Iris)
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  override func viewDidLoad() {
+      super.viewDidLoad()
+    if self.title == nil {
+      self.title = "IrisCodex"
     }
+    println(self.title)
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    self.beardlessIrisTable.reloadData()
+  }
+  
+  // setup the tableView sections and cells
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1}
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return irises.count }
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    let iris = irises[indexPath.row]
+    cell.textLabel?.text = iris.name
+    cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
+    return cell
+  }
+  
+  //setup what action happens when selecting individual cell
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let iris = irises[indexPath.row]
+    println(iris)
+  }
 
 }

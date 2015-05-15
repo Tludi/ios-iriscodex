@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MenuTableViewController: UITableViewController {
 
@@ -52,13 +53,21 @@ class MenuTableViewController: UITableViewController {
     
     switch (indexPath.row) {
     case 0:
+      
       destinationViewController = storyboard.instantiateViewControllerWithIdentifier("BeardedController") as! BeardedController
+      destinationViewController.title = "Bearded"
       break
     case 1:
+      destinationViewController = storyboard.instantiateViewControllerWithIdentifier("BeardedController") as! BeardedController
+      destinationViewController.title = "Beardless"
+      break
+    case 2:
       destinationViewController = storyboard.instantiateViewControllerWithIdentifier("BeardlessController") as! BeardlessController
+      destinationViewController.title = "Test"
       break
     default:
       destinationViewController = storyboard.instantiateViewControllerWithIdentifier("BeardedController") as! BeardedController
+      destinationViewController.title = "IrisCodex"
       break
     }
 
