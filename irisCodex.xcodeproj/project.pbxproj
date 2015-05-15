@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00036CF81B0403AA00DFCCC7 /* beardlessIrises.json in Resources */ = {isa = PBXBuildFile; fileRef = 00036CF71B0403AA00DFCCC7 /* beardlessIrises.json */; };
 		001F8F6F1AFAD44B001E2B90 /* Iris.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F8F6E1AFAD44B001E2B90 /* Iris.swift */; };
 		0020170D1AF9435400655F6F /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020170C1AF9435400655F6F /* MenuTableViewController.swift */; };
 		0020170F1AF9567800655F6F /* BeardlessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020170E1AF9567800655F6F /* BeardlessController.swift */; };
@@ -22,9 +23,14 @@
 		003BFA021AF93F2800058BEF /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BFA001AF93F2800058BEF /* ENSideMenu.swift */; };
 		003BFA031AF93F2800058BEF /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BFA011AF93F2800058BEF /* ENSideMenuNavigationController.swift */; };
 		003BFA051AF93FCD00058BEF /* SideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BFA041AF93FCD00058BEF /* SideNavigationController.swift */; };
-		004D80AB1AF99020007790EE /* irisone.csv in Resources */ = {isa = PBXBuildFile; fileRef = 004D80AA1AF99020007790EE /* irisone.csv */; };
 		004D80AD1AF9926E007790EE /* irisone.json in Resources */ = {isa = PBXBuildFile; fileRef = 004D80AC1AF9926E007790EE /* irisone.json */; };
-		2C0D0F127C1E907DC0F8AAF8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9282B52FAD10197D6ADA533E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		00A46F141B040DFF0005DCA9 /* allIrises.json in Resources */ = {isa = PBXBuildFile; fileRef = 00A46F131B040DFF0005DCA9 /* allIrises.json */; };
+		96E25560AA674508C58384C4 /* Pods_irisCodexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A323143D321D78147786B47C /* Pods_irisCodexTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D67B5F41C20EF6A68AF0543F /* Pods_irisCodex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDF7AC1AF5F7D0D9E307B05 /* Pods_irisCodex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EF44B0981B02C63B00654320 /* irisDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44B0971B02C63B00654320 /* irisDetailController.swift */; };
+		EF7B42AF1B0176FF007F4557 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */; };
+		EF7B42B11B0177C3007F4557 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B42B01B0177C3007F4557 /* DataManager.swift */; };
+		EFBCD1E51B01BCC60028441E /* bundledIris.realm in Resources */ = {isa = PBXBuildFile; fileRef = EFBCD1E41B01BCC60028441E /* bundledIris.realm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00036CF71B0403AA00DFCCC7 /* beardlessIrises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beardlessIrises.json; sourceTree = "<group>"; };
 		001F8F6E1AFAD44B001E2B90 /* Iris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iris.swift; sourceTree = "<group>"; };
 		0020170C1AF9435400655F6F /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		0020170E1AF9567800655F6F /* BeardlessController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeardlessController.swift; sourceTree = "<group>"; };
@@ -57,11 +64,18 @@
 		003BFA001AF93F2800058BEF /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		003BFA011AF93F2800058BEF /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		003BFA041AF93FCD00058BEF /* SideNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationController.swift; sourceTree = "<group>"; };
-		004D80AA1AF99020007790EE /* irisone.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = irisone.csv; sourceTree = "<group>"; };
 		004D80AC1AF9926E007790EE /* irisone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irisone.json; sourceTree = "<group>"; };
-		497D687A55DB6BFACA8DC631 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		8639B6078A70567B807925B7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		9282B52FAD10197D6ADA533E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00A46F131B040DFF0005DCA9 /* allIrises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allIrises.json; sourceTree = "<group>"; };
+		3FDF7AC1AF5F7D0D9E307B05 /* Pods_irisCodex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_irisCodex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56549578F6BEA477C2397352 /* Pods-irisCodex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodex/Pods-irisCodex.debug.xcconfig"; sourceTree = "<group>"; };
+		990A3424F1429C7A347547EE /* Pods-irisCodexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodexTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodexTests/Pods-irisCodexTests.release.xcconfig"; sourceTree = "<group>"; };
+		A323143D321D78147786B47C /* Pods_irisCodexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_irisCodexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E86668A575BE5CF615A2F872 /* Pods-irisCodexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodexTests/Pods-irisCodexTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF44B0971B02C63B00654320 /* irisDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = irisDetailController.swift; sourceTree = "<group>"; };
+		EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		EF7B42B01B0177C3007F4557 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		EFBCD1E41B01BCC60028441E /* bundledIris.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = bundledIris.realm; sourceTree = "<group>"; };
+		F70C6D0D948AC7C4691EBB4D /* Pods-irisCodex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodex.release.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodex/Pods-irisCodex.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C0D0F127C1E907DC0F8AAF8 /* Pods.framework in Frameworks */,
+				D67B5F41C20EF6A68AF0543F /* Pods_irisCodex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E25560AA674508C58384C4 /* Pods_irisCodexTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,8 +107,8 @@
 				003BFA001AF93F2800058BEF /* ENSideMenu.swift */,
 				003BFA011AF93F2800058BEF /* ENSideMenuNavigationController.swift */,
 				002017121AF9845E00655F6F /* Podfile */,
-				C532B18AA4ADBB2972ECF981 /* Pods */,
-				339290A5242B70219BB60590 /* Frameworks */,
+				8A0CA45A72773CBE096894AB /* Pods */,
+				8D41672021A34EBE82565B61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,10 +124,15 @@
 		003BF9D81AF93D3200058BEF /* irisCodex */ = {
 			isa = PBXGroup;
 			children = (
+				EFBCD1E41B01BCC60028441E /* bundledIris.realm */,
+				EF7B42B01B0177C3007F4557 /* DataManager.swift */,
+				EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */,
 				001F8F6E1AFAD44B001E2B90 /* Iris.swift */,
-				004D80AA1AF99020007790EE /* irisone.csv */,
 				004D80AC1AF9926E007790EE /* irisone.json */,
+				00036CF71B0403AA00DFCCC7 /* beardlessIrises.json */,
+				00A46F131B040DFF0005DCA9 /* allIrises.json */,
 				003BF9E21AF93D3200058BEF /* Main.storyboard */,
+				EF44B0971B02C63B00654320 /* irisDetailController.swift */,
 				003BF9DB1AF93D3200058BEF /* AppDelegate.swift */,
 				003BF9E01AF93D3200058BEF /* BeardedController.swift */,
 				0020170E1AF9567800655F6F /* BeardlessController.swift */,
@@ -152,21 +172,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		339290A5242B70219BB60590 /* Frameworks */ = {
+		8A0CA45A72773CBE096894AB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9282B52FAD10197D6ADA533E /* Pods.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C532B18AA4ADBB2972ECF981 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8639B6078A70567B807925B7 /* Pods.debug.xcconfig */,
-				497D687A55DB6BFACA8DC631 /* Pods.release.xcconfig */,
+				56549578F6BEA477C2397352 /* Pods-irisCodex.debug.xcconfig */,
+				F70C6D0D948AC7C4691EBB4D /* Pods-irisCodex.release.xcconfig */,
+				E86668A575BE5CF615A2F872 /* Pods-irisCodexTests.debug.xcconfig */,
+				990A3424F1429C7A347547EE /* Pods-irisCodexTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8D41672021A34EBE82565B61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FDF7AC1AF5F7D0D9E307B05 /* Pods_irisCodex.framework */,
+				A323143D321D78147786B47C /* Pods_irisCodexTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 003BF9FB1AF93D3200058BEF /* Build configuration list for PBXNativeTarget "irisCodexTests" */;
 			buildPhases = (
+				7CAEC5B2DE7419857D7E1110 /* Check Pods Manifest.lock */,
 				003BF9EA1AF93D3200058BEF /* Sources */,
 				003BF9EB1AF93D3200058BEF /* Frameworks */,
 				003BF9EC1AF93D3200058BEF /* Resources */,
+				69ACE59E3504657F86DD7FE7 /* Embed Pods Frameworks */,
+				F9E5F2C54C1528771951084F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,12 +278,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBCD1E51B01BCC60028441E /* bundledIris.realm in Resources */,
+				00036CF81B0403AA00DFCCC7 /* beardlessIrises.json in Resources */,
 				003BF9E41AF93D3200058BEF /* Main.storyboard in Resources */,
 				004D80AD1AF9926E007790EE /* irisone.json in Resources */,
 				003BF9E91AF93D3200058BEF /* LaunchScreen.xib in Resources */,
 				002017131AF9845E00655F6F /* Podfile in Resources */,
+				00A46F141B040DFF0005DCA9 /* allIrises.json in Resources */,
 				003BF9E61AF93D3200058BEF /* Images.xcassets in Resources */,
-				004D80AB1AF99020007790EE /* irisone.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +299,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		69ACE59E3504657F86DD7FE7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-irisCodexTests/Pods-irisCodexTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CAEC5B2DE7419857D7E1110 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		B4B9F685D5E60D2AF6DEF8B3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,7 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-irisCodex/Pods-irisCodex-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F8BCC5B03F6664FC45BF2259 /* Check Pods Manifest.lock */ = {
@@ -301,6 +359,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		F9E5F2C54C1528771951084F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-irisCodexTests/Pods-irisCodexTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FDF6E414B2220CD3C0F26CA0 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-irisCodex/Pods-irisCodex-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -324,11 +397,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				003BFA021AF93F2800058BEF /* ENSideMenu.swift in Sources */,
+				EF7B42B11B0177C3007F4557 /* DataManager.swift in Sources */,
 				0020170D1AF9435400655F6F /* MenuTableViewController.swift in Sources */,
 				002017111AF973EA00655F6F /* Irises.swift in Sources */,
+				EF7B42AF1B0176FF007F4557 /* SwiftyJSON.swift in Sources */,
 				003BF9E11AF93D3200058BEF /* BeardedController.swift in Sources */,
 				003BF9DF1AF93D3200058BEF /* irisCodex.xcdatamodeld in Sources */,
 				003BFA031AF93F2800058BEF /* ENSideMenuNavigationController.swift in Sources */,
+				EF44B0981B02C63B00654320 /* irisDetailController.swift in Sources */,
 				0020170F1AF9567800655F6F /* BeardlessController.swift in Sources */,
 				003BFA051AF93FCD00058BEF /* SideNavigationController.swift in Sources */,
 				001F8F6F1AFAD44B001E2B90 /* Iris.swift in Sources */,
@@ -459,7 +535,7 @@
 		};
 		003BF9F91AF93D3200058BEF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8639B6078A70567B807925B7 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 56549578F6BEA477C2397352 /* Pods-irisCodex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = irisCodex/Info.plist;
@@ -470,7 +546,7 @@
 		};
 		003BF9FA1AF93D3200058BEF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 497D687A55DB6BFACA8DC631 /* Pods.release.xcconfig */;
+			baseConfigurationReference = F70C6D0D948AC7C4691EBB4D /* Pods-irisCodex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = irisCodex/Info.plist;
@@ -481,6 +557,7 @@
 		};
 		003BF9FC1AF93D3200058BEF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E86668A575BE5CF615A2F872 /* Pods-irisCodexTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -500,6 +577,7 @@
 		};
 		003BF9FD1AF93D3200058BEF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 990A3424F1429C7A347547EE /* Pods-irisCodexTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

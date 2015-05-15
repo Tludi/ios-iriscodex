@@ -1,0 +1,6 @@
+framework module Pods_irisCodex {
+  umbrella header "Pods-irisCodex-umbrella.h"
+
+  export *
+  module * { export * }
+}

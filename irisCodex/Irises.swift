@@ -11,29 +11,31 @@ import Foundation
 class Irises
 {
   var name = "name"
-  var irisType = "irisType"
-  var typeCircle = "typeCircle"
   var hybridizer = "hybridizer"
+  var category = "category"
+  var gardenOne = true
+  var gardenTwo = true
+  var gardenThree = true
+  var gardenFour = true
+  var gardenFive = true
+  var gardenSix = true
+  var region13 = true
+  var irisType = "irisType"
   var year = "year"
-  var gardenOne = "15x15filled.png"
-  var gardenTwo = "15x15filled.png"
-  var gardenThree = "15x15filled.png"
-  var gardenFour = "15x15filled.png"
-  var gardenFive = "15x15filled.png"
-  var gardenSix = "15x15filled.png"
   
-  init(name: String, irisType: String, typeCircle: String, hybridizer: String, year: String, gardenOne: String, gardenTwo: String, gardenThree: String, gardenFour: String, gardenFive: String, gardenSix: String)
+  init(name: String?, hybridizer: String?, category: String?, gardenOne: Bool, gardenTwo: Bool, gardenThree: Bool, gardenFour: Bool, gardenFive: Bool, gardenSix: Bool, region13: Bool, irisType: String, year: String?)
   {
-    self.name = name
-    self.irisType = irisType
-    self.typeCircle = typeCircle
-    self.hybridizer = hybridizer
-    self.year = year
+    self.name = name ?? ""
+    self.hybridizer = hybridizer ?? ""
+    self.category = category ?? ""
     self.gardenOne = gardenOne
     self.gardenTwo = gardenTwo
     self.gardenThree = gardenThree
     self.gardenFour = gardenFour
     self.gardenFive = gardenFive
     self.gardenSix = gardenSix
+    self.region13 = region13
+    self.irisType = irisType
+    self.year = year ?? ""
   }
 }
