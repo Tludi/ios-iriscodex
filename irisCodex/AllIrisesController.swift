@@ -9,34 +9,35 @@
 import UIKit
 import RealmSwift
 
-class BeardlessController: UIViewController {
+class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UISearchControllerDelegate {
 
   @IBOutlet weak var beardlessIrisTable: UITableView!
-  
   @IBAction func toggleMenu(sender: AnyObject) {
     toggleSideMenuView()
   }
-
+  
+  @IBOutlet weak var irisCount: UILabel!
+  
+  // get all Irises
   let irises = Realm().objects(Iris)
+  
   
   override func viewDidLoad() {
       super.viewDidLoad()
-    if self.title == nil {
-      self.title = "IrisCodex"
-    }
-    println(self.title)
+      // irisCount.text = "hello"
   }
 
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    self.beardlessIrisTable.reloadData()
+    //self.beardlessIrisTable.reloadData()
   }
   
+  // ***** setup the table and cells
   // setup the tableView sections and cells
   func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1}
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return irises.count }
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    var cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! UITableViewCell
     let iris = irises[indexPath.row]
     cell.textLabel?.text = iris.name
     cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
@@ -48,5 +49,9 @@ class BeardlessController: UIViewController {
     let iris = irises[indexPath.row]
     println(iris)
   }
+  
+  
+  // ***** Search methods *****
+
 
 }

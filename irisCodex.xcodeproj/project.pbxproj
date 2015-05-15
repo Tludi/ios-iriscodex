@@ -10,7 +10,7 @@
 		00036CF81B0403AA00DFCCC7 /* beardlessIrises.json in Resources */ = {isa = PBXBuildFile; fileRef = 00036CF71B0403AA00DFCCC7 /* beardlessIrises.json */; };
 		001F8F6F1AFAD44B001E2B90 /* Iris.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F8F6E1AFAD44B001E2B90 /* Iris.swift */; };
 		0020170D1AF9435400655F6F /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020170C1AF9435400655F6F /* MenuTableViewController.swift */; };
-		0020170F1AF9567800655F6F /* BeardlessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020170E1AF9567800655F6F /* BeardlessController.swift */; };
+		0020170F1AF9567800655F6F /* AllIrisesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020170E1AF9567800655F6F /* AllIrisesController.swift */; };
 		002017111AF973EA00655F6F /* Irises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002017101AF973EA00655F6F /* Irises.swift */; };
 		002017131AF9845E00655F6F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 002017121AF9845E00655F6F /* Podfile */; };
 		003BF9DC1AF93D3200058BEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BF9DB1AF93D3200058BEF /* AppDelegate.swift */; };
@@ -47,7 +47,7 @@
 		00036CF71B0403AA00DFCCC7 /* beardlessIrises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beardlessIrises.json; sourceTree = "<group>"; };
 		001F8F6E1AFAD44B001E2B90 /* Iris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iris.swift; sourceTree = "<group>"; };
 		0020170C1AF9435400655F6F /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		0020170E1AF9567800655F6F /* BeardlessController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeardlessController.swift; sourceTree = "<group>"; };
+		0020170E1AF9567800655F6F /* AllIrisesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllIrisesController.swift; sourceTree = "<group>"; };
 		002017101AF973EA00655F6F /* Irises.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Irises.swift; sourceTree = "<group>"; };
 		002017121AF9845E00655F6F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		003BF9D61AF93D3200058BEF /* irisCodex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = irisCodex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +135,7 @@
 				EF44B0971B02C63B00654320 /* irisDetailController.swift */,
 				003BF9DB1AF93D3200058BEF /* AppDelegate.swift */,
 				003BF9E01AF93D3200058BEF /* BeardedController.swift */,
-				0020170E1AF9567800655F6F /* BeardlessController.swift */,
+				0020170E1AF9567800655F6F /* AllIrisesController.swift */,
 				0020170C1AF9435400655F6F /* MenuTableViewController.swift */,
 				003BFA041AF93FCD00058BEF /* SideNavigationController.swift */,
 				003BF9E51AF93D3200058BEF /* Images.xcassets */,
@@ -405,7 +405,7 @@
 				003BF9DF1AF93D3200058BEF /* irisCodex.xcdatamodeld in Sources */,
 				003BFA031AF93F2800058BEF /* ENSideMenuNavigationController.swift in Sources */,
 				EF44B0981B02C63B00654320 /* irisDetailController.swift in Sources */,
-				0020170F1AF9567800655F6F /* BeardlessController.swift in Sources */,
+				0020170F1AF9567800655F6F /* AllIrisesController.swift in Sources */,
 				003BFA051AF93FCD00058BEF /* SideNavigationController.swift in Sources */,
 				001F8F6F1AFAD44B001E2B90 /* Iris.swift in Sources */,
 				003BF9DC1AF93D3200058BEF /* AppDelegate.swift in Sources */,

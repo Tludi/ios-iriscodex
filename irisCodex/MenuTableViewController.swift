@@ -62,7 +62,7 @@ class MenuTableViewController: UITableViewController {
       destinationViewController.title = "Beardless"
       break
     case 2:
-      destinationViewController = storyboard.instantiateViewControllerWithIdentifier("BeardlessController") as! BeardlessController
+      destinationViewController = storyboard.instantiateViewControllerWithIdentifier("AllIrisesController") as! AllIrisesController
       destinationViewController.title = "Test"
       break
     default:
