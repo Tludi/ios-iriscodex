@@ -13,14 +13,13 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  
+  let allIrises = Realm().objects(Iris)
+
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
 
-    
-    let realm = Realm()
-    let irises = realm.objects(Iris)
+    let irises = allIrises
     println("number of Irises in Base Realm - \(irises.count)")
     
     // populate realm if empty

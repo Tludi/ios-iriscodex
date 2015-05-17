@@ -19,8 +19,8 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   @IBOutlet weak var irisCount: UILabel!
   
   // get all Irises
-  let irises = Realm().objects(Iris)
-  
+  //let irises = Realm().objects(Iris)
+  let allIrises = Realm().objects(Iris)
   
   override func viewDidLoad() {
       super.viewDidLoad()
@@ -35,10 +35,10 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   // ***** setup the table and cells
   // setup the tableView sections and cells
   func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1}
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return irises.count }
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return allIrises.count }
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! UITableViewCell
-    let iris = irises[indexPath.row]
+    let iris = allIrises[indexPath.row]
     cell.textLabel?.text = iris.name
     cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
     return cell
@@ -46,7 +46,7 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   
   //setup what action happens when selecting individual cell
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let iris = irises[indexPath.row]
+    let iris = allIrises[indexPath.row]
     println(iris)
   }
   
