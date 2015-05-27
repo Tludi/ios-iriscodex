@@ -22,12 +22,49 @@ class irisDetailController: UIViewController {
   @IBOutlet weak var hybridizerLabel: UILabel!
   @IBOutlet weak var yearLabel: UILabel!
   @IBOutlet weak var typeLabel: UILabel!
+  @IBOutlet weak var garden1: UIImageView!
+  @IBOutlet weak var garden2: UIImageView!
+  @IBOutlet weak var garden3: UIImageView!
+  @IBOutlet weak var garden4: UIImageView!
+  @IBOutlet weak var garden5: UIImageView!
+  @IBOutlet weak var garden6: UIImageView!
   
   override func viewWillAppear(animated: Bool) {
     irisNameLabel.text = singleIris.name
     hybridizerLabel.text = singleIris.hybridizer
     yearLabel.text = singleIris.year
     typeLabel.text = singleIris.irisType
+    
+    if singleIris.garden1 {
+      garden1.image = UIImage(named: "15x15filled.png")
+    }else{
+      garden1.image = UIImage(named: "15x15empty.png")
+    }
+    if singleIris.garden2{
+      garden2.image = UIImage(named: "15x15filled.png")
+    }else{
+      garden2.image = UIImage(named: "15x15empty.png")
+    }
+    if singleIris.garden3 {
+      garden3.image = UIImage(named: "15x15filled.png")
+    }else{
+      garden3.image = UIImage(named: "15x15empty.png")
+    }
+    if singleIris.garden4 {
+      garden4.image = UIImage(named: "15x15filled.png")
+    }else{
+      garden4.image = UIImage(named: "15x15empty.png")
+    }
+    if singleIris.garden5 {
+      garden5.image = UIImage(named: "15x15filled.png")
+    }else{
+      garden5.image = UIImage(named: "15x15empty.png")
+    }
+    if singleIris.garden6 {
+      garden6.image = UIImage(named: "15x15filled.png")
+    }else{
+      garden6.image = UIImage(named: "15x15empty.png")
+    }
     
     if singleIris.favorite {
       favorite.setTitle("Remove From Favorites", forState: .Normal)
