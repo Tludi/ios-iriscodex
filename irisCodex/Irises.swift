@@ -10,6 +10,7 @@ import Foundation
 
 class Irises
 {
+  var id = "id"
   var name = "name"
   var hybridizer = "hybridizer"
   var category = "category"
@@ -22,9 +23,12 @@ class Irises
   var region13 = true
   var irisType = "irisType"
   var year = "year"
+  var note = "note"
+  var favorite = false
   
-  init(name: String?, hybridizer: String?, category: String?, gardenOne: Bool, gardenTwo: Bool, gardenThree: Bool, gardenFour: Bool, gardenFive: Bool, gardenSix: Bool, region13: Bool, irisType: String, year: String?)
+  init(id: String?, name: String?, hybridizer: String?, category: String?, gardenOne: Bool, gardenTwo: Bool, gardenThree: Bool, gardenFour: Bool, gardenFive: Bool, gardenSix: Bool, region13: Bool, irisType: String, year: String?, note: String?, favorite: Bool)
   {
+    self.id = id ?? ""
     self.name = name ?? ""
     self.hybridizer = hybridizer ?? ""
     self.category = category ?? ""
@@ -37,5 +41,7 @@ class Irises
     self.region13 = region13
     self.irisType = irisType
     self.year = year ?? ""
+    self.note = note ?? ""
+    self.favorite = favorite
   }
 }

@@ -40,7 +40,7 @@ class MenuTableViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Menu"
+    return "Iris Codex"
   }
   
   
@@ -53,20 +53,23 @@ class MenuTableViewController: UITableViewController {
     
     switch (indexPath.row) {
     case 0:
-      
-      destinationViewController = storyboard.instantiateViewControllerWithIdentifier("BeardedController") as! BeardedController
-      destinationViewController.title = "Bearded"
+      destinationViewController = storyboard.instantiateViewControllerWithIdentifier("AllIrisesController") as! AllIrisesController
+      destinationViewController.title = "All Irises"
       break
     case 1:
       destinationViewController = storyboard.instantiateViewControllerWithIdentifier("BeardedController") as! BeardedController
-      destinationViewController.title = "Beardless"
+      destinationViewController.title = "Bearded"
       break
     case 2:
-      destinationViewController = storyboard.instantiateViewControllerWithIdentifier("AllIrisesController") as! AllIrisesController
-      destinationViewController.title = "Test"
+      destinationViewController = storyboard.instantiateViewControllerWithIdentifier("BeardedController") as! BeardedController
+      destinationViewController.title = "Beardless"
+      break
+    case 3:
+      destinationViewController = storyboard.instantiateViewControllerWithIdentifier("FavoritesController") as! FavoritesController
+      destinationViewController.title = "Favorites"
       break
     default:
-      destinationViewController = storyboard.instantiateViewControllerWithIdentifier("BeardedController") as! BeardedController
+      destinationViewController = storyboard.instantiateViewControllerWithIdentifier("AllIrisesController") as! AllIrisesController
       destinationViewController.title = "IrisCodex"
       break
     }

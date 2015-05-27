@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Iris: Object {
+  dynamic var id = ""
   dynamic var name = ""
   dynamic var hybridizer = ""
   dynamic var category = ""
@@ -22,6 +23,13 @@ class Iris: Object {
   dynamic var region13 = true
   dynamic var irisType = ""
   dynamic var year = ""
+  dynamic var note = ""
+  dynamic var favorite = false
+  
+  
+  override static func primaryKey() -> String? {
+    return "id"
+  }
 }
 
 

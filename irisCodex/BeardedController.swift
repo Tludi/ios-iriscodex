@@ -14,8 +14,10 @@ import RealmSwift
 class BeardedController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet weak var beardedIrisTable: UITableView!
-  // toggle the side menu with the navigation button
-  @IBAction func toggleMenu(sender: AnyObject) { toggleSideMenuView() }
+//   toggle the side menu with the navigation button
+  @IBAction func toggleMenu(sender: AnyObject) {
+    toggleSideMenuView()
+    }
   @IBAction func addIrisButton(sender: AnyObject) {
   addNewItem()
   }
@@ -26,36 +28,46 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // let irises = Realm().objects(Iris)
     
     if self.title == nil {
       self.title = "Bearded"
     }
-    
+    //self.beardedIrisTable.reloadData()
+  }
+  
+  func getIrises(category:String) -> AnyObject {
+    var irises = Realm().objects(Iris).filter("category = '\(category)'")
+    return irises
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-//    println(self.title!)
     self.beardedIrisTable.reloadData()
   }
   
   // setup the tableView sections and cells
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1}
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 1
+  }
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     let irises = Realm().objects(Iris).filter("category = '\(self.title!)'")
     return irises.count
   }
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-    if self.title == "IrisCodex" {
-      //let irises = Realm().objects(Iris)
-      println(self.title)
-    }
-      let irises = Realm().objects(Iris).filter("category = '\(self.title!)'")
+    let irises = Realm().objects(Iris).filter("category = '\(self.title!)'")
     let iris = irises[indexPath.row]
     cell.textLabel?.text = iris.name
     cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
+    println("\(iris.name) - \(iris.id)")
+    if (iris.favorite) {
+      var imageName = "star2@1x.png"
+      var image = UIImage(named: imageName)
+      //println("\(imageName) - \(iris.id)")
+      cell.imageView?.image = image
+    } else {
+      cell.imageView?.image = UIImage(named: "star1@1x.png")
+    }
     return cell
   }
   

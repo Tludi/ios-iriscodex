@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7E7E381B-9BAF-45B7-9897-6B5C828CEC86</string>
+	<key>IDESourceControlProjectName</key>
+	<string>irisCodex</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9854DE70A99157153D0420683B80AF7C915674F1</key>
+		<string>https://github.com/Tludi/ios-iriscodex.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>irisCodex.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9854DE70A99157153D0420683B80AF7C915674F1</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Tludi/ios-iriscodex.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9854DE70A99157153D0420683B80AF7C915674F1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9854DE70A99157153D0420683B80AF7C915674F1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>irisCodex</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     println("number of Irises in Base Realm - \(irises.count)")
     
     // populate realm if empty
-    if irises.count == 0 {
+    if irises.count == -1 {
       
       DataManager.getIrisDataFromFileWithSuccess {
         (data) -> Void in
@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           var irisesFromJSON = [Irises]()
           
           for irisDictionary in irisArray {
+            var irisId: String? = NSUUID().UUIDString
             var irisName: String? = irisDictionary["Name"].string
             var irisHybridizer: String? = irisDictionary["Hybridizer"].string
             var irisCategory: String? = irisDictionary["Category"].string
@@ -48,8 +49,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var irisRegion13: Bool? = irisDictionary["R13"].bool
             var irisIrisType: String? = irisDictionary["Type"].string
             var irisYear: String? = irisDictionary["Year"].string
+            var irisNote: String? = "Notes:"
+            var irisFavorite: Bool? = false
             
-            var newIris = Irises(name: irisName!, hybridizer: irisHybridizer!, category: irisCategory!, gardenOne: irisGardenOne!, gardenTwo: irisGardenTwo!, gardenThree: irisGardenThree!, gardenFour: irisGardenFour!, gardenFive: irisGardenFive!, gardenSix: irisGardenSix!, region13: irisRegion13!, irisType: irisIrisType!, year: irisYear!)
+            var newIris = Irises(id: irisId!, name: irisName!, hybridizer: irisHybridizer!, category: irisCategory!, gardenOne: irisGardenOne!, gardenTwo: irisGardenTwo!, gardenThree: irisGardenThree!, gardenFour: irisGardenFour!, gardenFive: irisGardenFive!, gardenSix: irisGardenSix!, region13: irisRegion13!, irisType: irisIrisType!, year: irisYear!, note: irisNote!, favorite: irisFavorite!)
             irisesFromJSON.append(newIris)
 
           } // end for irisDictionary
@@ -61,7 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           for i in 0 ..< irisesFromJSON.count {
             println(irisesFromJSON[i].name)
             
-            var newIrisName = irisesFromJSON[i].name
+            var newIrisId = irisesFromJSON[i].id
+            var newIrisName = irisesFromJSON[i].name.lowercaseString.capitalizedString
             var newIrisHybridizer = irisesFromJSON[i].hybridizer
             var newIrisCategory = irisesFromJSON[i].category
             var newIrisGardenOne = irisesFromJSON[i].gardenOne
@@ -73,9 +77,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var newirisRegion13 = irisesFromJSON[i].region13
             var newIrisIrisType = irisesFromJSON[i].irisType
             var newIrisYear = irisesFromJSON[i].year
+            var newIrisNote = irisesFromJSON[i].note
+            var newIrisFavorite = irisesFromJSON[i].favorite
             
             realm.write {
-              realm.create(Iris.self, value: [newIrisName, newIrisHybridizer, newIrisCategory,  newIrisGardenOne, newIrisGardenTwo, newIrisGardenThree, newIrisGardenFour, newIrisGardenFive, newIrisGardenSix, newirisRegion13, newIrisIrisType, newIrisYear])
+              realm.create(Iris.self, value: [newIrisId, newIrisName, newIrisHybridizer, newIrisCategory,  newIrisGardenOne, newIrisGardenTwo, newIrisGardenThree, newIrisGardenFour, newIrisGardenFive, newIrisGardenSix, newirisRegion13, newIrisIrisType, newIrisYear, newIrisNote, newIrisFavorite])
               
             } // end realm.write
           }

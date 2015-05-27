@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00036CF81B0403AA00DFCCC7 /* beardlessIrises.json in Resources */ = {isa = PBXBuildFile; fileRef = 00036CF71B0403AA00DFCCC7 /* beardlessIrises.json */; };
 		001F8F6F1AFAD44B001E2B90 /* Iris.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F8F6E1AFAD44B001E2B90 /* Iris.swift */; };
 		0020170D1AF9435400655F6F /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020170C1AF9435400655F6F /* MenuTableViewController.swift */; };
 		0020170F1AF9567800655F6F /* AllIrisesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020170E1AF9567800655F6F /* AllIrisesController.swift */; };
@@ -23,10 +22,10 @@
 		003BFA021AF93F2800058BEF /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BFA001AF93F2800058BEF /* ENSideMenu.swift */; };
 		003BFA031AF93F2800058BEF /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BFA011AF93F2800058BEF /* ENSideMenuNavigationController.swift */; };
 		003BFA051AF93FCD00058BEF /* SideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BFA041AF93FCD00058BEF /* SideNavigationController.swift */; };
-		004D80AD1AF9926E007790EE /* irisone.json in Resources */ = {isa = PBXBuildFile; fileRef = 004D80AC1AF9926E007790EE /* irisone.json */; };
 		00A46F141B040DFF0005DCA9 /* allIrises.json in Resources */ = {isa = PBXBuildFile; fileRef = 00A46F131B040DFF0005DCA9 /* allIrises.json */; };
 		96E25560AA674508C58384C4 /* Pods_irisCodexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A323143D321D78147786B47C /* Pods_irisCodexTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D67B5F41C20EF6A68AF0543F /* Pods_irisCodex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDF7AC1AF5F7D0D9E307B05 /* Pods_irisCodex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EF3BC3A81B0FFDE3007F8AD8 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BC3A71B0FFDE3007F8AD8 /* FavoritesController.swift */; };
 		EF44B0981B02C63B00654320 /* irisDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44B0971B02C63B00654320 /* irisDetailController.swift */; };
 		EF7B42AF1B0176FF007F4557 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */; };
 		EF7B42B11B0177C3007F4557 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B42B01B0177C3007F4557 /* DataManager.swift */; };
@@ -44,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00036CF71B0403AA00DFCCC7 /* beardlessIrises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beardlessIrises.json; sourceTree = "<group>"; };
 		001F8F6E1AFAD44B001E2B90 /* Iris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iris.swift; sourceTree = "<group>"; };
 		0020170C1AF9435400655F6F /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		0020170E1AF9567800655F6F /* AllIrisesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllIrisesController.swift; sourceTree = "<group>"; };
@@ -64,15 +62,15 @@
 		003BFA001AF93F2800058BEF /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		003BFA011AF93F2800058BEF /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		003BFA041AF93FCD00058BEF /* SideNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationController.swift; sourceTree = "<group>"; };
-		004D80AC1AF9926E007790EE /* irisone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irisone.json; sourceTree = "<group>"; };
 		00A46F131B040DFF0005DCA9 /* allIrises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allIrises.json; sourceTree = "<group>"; };
 		3FDF7AC1AF5F7D0D9E307B05 /* Pods_irisCodex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_irisCodex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56549578F6BEA477C2397352 /* Pods-irisCodex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodex/Pods-irisCodex.debug.xcconfig"; sourceTree = "<group>"; };
 		990A3424F1429C7A347547EE /* Pods-irisCodexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodexTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodexTests/Pods-irisCodexTests.release.xcconfig"; sourceTree = "<group>"; };
 		A323143D321D78147786B47C /* Pods_irisCodexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_irisCodexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E86668A575BE5CF615A2F872 /* Pods-irisCodexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodexTests/Pods-irisCodexTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF3BC3A71B0FFDE3007F8AD8 /* FavoritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		EF44B0971B02C63B00654320 /* irisDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = irisDetailController.swift; sourceTree = "<group>"; };
-		EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = irisCodex/SwiftyJSON.swift; sourceTree = "<group>"; };
 		EF7B42B01B0177C3007F4557 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EFBCD1E41B01BCC60028441E /* bundledIris.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = bundledIris.realm; sourceTree = "<group>"; };
 		F70C6D0D948AC7C4691EBB4D /* Pods-irisCodex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodex.release.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodex/Pods-irisCodex.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +102,7 @@
 				003BF9D81AF93D3200058BEF /* irisCodex */,
 				003BF9F11AF93D3200058BEF /* irisCodexTests */,
 				003BF9D71AF93D3200058BEF /* Products */,
+				EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */,
 				003BFA001AF93F2800058BEF /* ENSideMenu.swift */,
 				003BFA011AF93F2800058BEF /* ENSideMenuNavigationController.swift */,
 				002017121AF9845E00655F6F /* Podfile */,
@@ -124,24 +123,22 @@
 		003BF9D81AF93D3200058BEF /* irisCodex */ = {
 			isa = PBXGroup;
 			children = (
-				EFBCD1E41B01BCC60028441E /* bundledIris.realm */,
-				EF7B42B01B0177C3007F4557 /* DataManager.swift */,
-				EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */,
-				001F8F6E1AFAD44B001E2B90 /* Iris.swift */,
-				004D80AC1AF9926E007790EE /* irisone.json */,
-				00036CF71B0403AA00DFCCC7 /* beardlessIrises.json */,
-				00A46F131B040DFF0005DCA9 /* allIrises.json */,
 				003BF9E21AF93D3200058BEF /* Main.storyboard */,
-				EF44B0971B02C63B00654320 /* irisDetailController.swift */,
+				EFBCD1E41B01BCC60028441E /* bundledIris.realm */,
 				003BF9DB1AF93D3200058BEF /* AppDelegate.swift */,
-				003BF9E01AF93D3200058BEF /* BeardedController.swift */,
+				EF7B42B01B0177C3007F4557 /* DataManager.swift */,
+				001F8F6E1AFAD44B001E2B90 /* Iris.swift */,
+				002017101AF973EA00655F6F /* Irises.swift */,
+				00A46F131B040DFF0005DCA9 /* allIrises.json */,
 				0020170E1AF9567800655F6F /* AllIrisesController.swift */,
+				003BF9E01AF93D3200058BEF /* BeardedController.swift */,
+				EF3BC3A71B0FFDE3007F8AD8 /* FavoritesController.swift */,
+				EF44B0971B02C63B00654320 /* irisDetailController.swift */,
 				0020170C1AF9435400655F6F /* MenuTableViewController.swift */,
 				003BFA041AF93FCD00058BEF /* SideNavigationController.swift */,
 				003BF9E51AF93D3200058BEF /* Images.xcassets */,
 				003BF9E71AF93D3200058BEF /* LaunchScreen.xib */,
 				003BF9DD1AF93D3200058BEF /* irisCodex.xcdatamodeld */,
-				002017101AF973EA00655F6F /* Irises.swift */,
 				003BF9D91AF93D3200058BEF /* Supporting Files */,
 			);
 			path = irisCodex;
@@ -279,9 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFBCD1E51B01BCC60028441E /* bundledIris.realm in Resources */,
-				00036CF81B0403AA00DFCCC7 /* beardlessIrises.json in Resources */,
 				003BF9E41AF93D3200058BEF /* Main.storyboard in Resources */,
-				004D80AD1AF9926E007790EE /* irisone.json in Resources */,
 				003BF9E91AF93D3200058BEF /* LaunchScreen.xib in Resources */,
 				002017131AF9845E00655F6F /* Podfile in Resources */,
 				00A46F141B040DFF0005DCA9 /* allIrises.json in Resources */,
@@ -407,6 +402,7 @@
 				EF44B0981B02C63B00654320 /* irisDetailController.swift in Sources */,
 				0020170F1AF9567800655F6F /* AllIrisesController.swift in Sources */,
 				003BFA051AF93FCD00058BEF /* SideNavigationController.swift in Sources */,
+				EF3BC3A81B0FFDE3007F8AD8 /* FavoritesController.swift in Sources */,
 				001F8F6F1AFAD44B001E2B90 /* Iris.swift in Sources */,
 				003BF9DC1AF93D3200058BEF /* AppDelegate.swift in Sources */,
 			);
