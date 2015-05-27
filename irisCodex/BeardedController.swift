@@ -40,9 +40,13 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
     return irises
   }
   
+  override func viewWillAppear(animated: Bool) {
+    self.beardedIrisTable.reloadData()
+  }
+  
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    self.beardedIrisTable.reloadData()
+    //self.beardedIrisTable.reloadData()
   }
   
   // setup the tableView sections and cells

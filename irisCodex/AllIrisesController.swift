@@ -25,9 +25,13 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
       checkForData()
   }
 
+  override func viewWillAppear(animated: Bool) {
+    self.allIrisesTable.reloadData()
+  }
+  
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    //self.beardlessIrisTable.reloadData()
+    //self.allIrisesTable.reloadData()
   }
   
   // ***** setup the table and cells
@@ -39,6 +43,14 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
     let iris = allIrises[indexPath.row]
     cell.textLabel?.text = iris.name
     cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
+    if (iris.favorite) {
+      var imageName = "star2@1x.png"
+      var image = UIImage(named: imageName)
+      //println("\(imageName) - \(iris.id)")
+      cell.imageView?.image = image
+    } else {
+      cell.imageView?.image = UIImage(named: "star1@1x.png")
+    }
     return cell
   }
   

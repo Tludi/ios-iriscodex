@@ -123,13 +123,13 @@
 		003BF9D81AF93D3200058BEF /* irisCodex */ = {
 			isa = PBXGroup;
 			children = (
+				00DD66421B165F1C002CFDFC /* data */,
 				003BF9E21AF93D3200058BEF /* Main.storyboard */,
 				EFBCD1E41B01BCC60028441E /* bundledIris.realm */,
 				003BF9DB1AF93D3200058BEF /* AppDelegate.swift */,
 				EF7B42B01B0177C3007F4557 /* DataManager.swift */,
 				001F8F6E1AFAD44B001E2B90 /* Iris.swift */,
 				002017101AF973EA00655F6F /* Irises.swift */,
-				00A46F131B040DFF0005DCA9 /* allIrises.json */,
 				0020170E1AF9567800655F6F /* AllIrisesController.swift */,
 				003BF9E01AF93D3200058BEF /* BeardedController.swift */,
 				EF3BC3A71B0FFDE3007F8AD8 /* FavoritesController.swift */,
@@ -167,6 +167,14 @@
 				003BF9F31AF93D3200058BEF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00DD66421B165F1C002CFDFC /* data */ = {
+			isa = PBXGroup;
+			children = (
+				00A46F131B040DFF0005DCA9 /* allIrises.json */,
+			);
+			name = data;
 			sourceTree = "<group>";
 		};
 		8A0CA45A72773CBE096894AB /* Pods */ = {
