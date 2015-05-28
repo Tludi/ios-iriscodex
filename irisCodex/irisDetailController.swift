@@ -9,10 +9,16 @@
 import UIKit
 import RealmSwift
 
-class irisDetailController: UIViewController {
+class irisDetailController: UIViewController, UITextViewDelegate {
 
   var singleIris = Iris()
+  let nonFavoriteImageFile = UIImage(named: "star1.png")
+  let favoriteImageFile = UIImage(named: "star2.png")
   
+  @IBOutlet weak var favImage: UIButton!
+  @IBAction func editFavorite(sender: UIButton) {
+    editFavorites()
+  }
   @IBOutlet weak var favorite: UIButton!
   @IBAction func addFavorite(sender: UIButton) {
     editFavorites()
@@ -21,90 +27,110 @@ class irisDetailController: UIViewController {
   @IBOutlet weak var irisNameLabel: UILabel!
   @IBOutlet weak var hybridizerLabel: UILabel!
   @IBOutlet weak var yearLabel: UILabel!
-  @IBOutlet weak var typeLabel: UILabel!
   @IBOutlet weak var garden1: UIImageView!
   @IBOutlet weak var garden2: UIImageView!
   @IBOutlet weak var garden3: UIImageView!
   @IBOutlet weak var garden4: UIImageView!
   @IBOutlet weak var garden5: UIImageView!
   @IBOutlet weak var garden6: UIImageView!
+
+  
+  @IBOutlet weak var notes: UITextView!
   
   override func viewWillAppear(animated: Bool) {
     irisNameLabel.text = singleIris.name
     hybridizerLabel.text = singleIris.hybridizer
-    yearLabel.text = singleIris.year
-    typeLabel.text = singleIris.irisType
+    yearLabel.text = "\(singleIris.year) - \(singleIris.irisType)"
+    
+    notes.text = singleIris.note
+    let emptyIris = "40x40empty2.png"
+    let filledIris = "40x40filled2.png"
     
     if singleIris.garden1 {
-      garden1.image = UIImage(named: "15x15filled.png")
+      garden1.image = UIImage(named: filledIris)
     }else{
-      garden1.image = UIImage(named: "15x15empty.png")
+      garden1.image = UIImage(named: emptyIris)
     }
     if singleIris.garden2{
-      garden2.image = UIImage(named: "15x15filled.png")
+      garden2.image = UIImage(named: filledIris)
     }else{
-      garden2.image = UIImage(named: "15x15empty.png")
+      garden2.image = UIImage(named: emptyIris)
     }
     if singleIris.garden3 {
-      garden3.image = UIImage(named: "15x15filled.png")
+      garden3.image = UIImage(named: filledIris)
     }else{
-      garden3.image = UIImage(named: "15x15empty.png")
+      garden3.image = UIImage(named: emptyIris)
     }
     if singleIris.garden4 {
-      garden4.image = UIImage(named: "15x15filled.png")
+      garden4.image = UIImage(named: filledIris)
     }else{
-      garden4.image = UIImage(named: "15x15empty.png")
+      garden4.image = UIImage(named: emptyIris)
     }
     if singleIris.garden5 {
-      garden5.image = UIImage(named: "15x15filled.png")
+      garden5.image = UIImage(named: filledIris)
     }else{
-      garden5.image = UIImage(named: "15x15empty.png")
+      garden5.image = UIImage(named: emptyIris)
     }
     if singleIris.garden6 {
-      garden6.image = UIImage(named: "15x15filled.png")
+      garden6.image = UIImage(named: filledIris)
     }else{
-      garden6.image = UIImage(named: "15x15empty.png")
+      garden6.image = UIImage(named: emptyIris)
     }
     
     if singleIris.favorite {
+      favImage.setImage(UIImage(named: "star2.png"), forState: UIControlState.Normal)
       favorite.setTitle("Remove From Favorites", forState: .Normal)
     } else {
+      favImage.setImage(UIImage(named: "star1.png"), forState: UIControlState.Normal)
       favorite.setTitle("Add To Favorites", forState: .Normal)
     }
-    //notes.text = singleIris.note
+    
+  } // end viewWillAppear
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.
   }
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    view.endEditing(true)
+  }
+  
+  override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
+  }
 
-        // Do any additional setup after loading the view.
-    }
+  // save the edited text in notes:
+  func textViewDidChange(textView: UITextView) {
+    editNotes()
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func editFavorites() {
-      let realm = Realm()
-      realm.write {
-        if self.singleIris.favorite {
-          self.singleIris.favorite = false
-          self.favorite.setTitle("Add To Favorites", forState: .Normal)
-        } else {
-          self.singleIris.favorite = true
-          self.favorite.setTitle("Remove From Favorites", forState: .Normal)
-        }
+  func textViewDidEndEditing(textView: UITextView) {
+    notes.resignFirstResponder()
+  }
+
+  func editFavorites() {
+    let realm = Realm()
+    realm.write {
+      if self.singleIris.favorite {
+        self.singleIris.favorite = false
+        self.favorite.setTitle("Add To Favorites", forState: .Normal)
+        self.favImage.setImage(UIImage(named: "star1.png"), forState: UIControlState.Normal)
+      } else {
+        self.singleIris.favorite = true
+        self.favorite.setTitle("Remove From Favorites", forState: .Normal)
+        self.favImage.setImage(UIImage(named: "star2.png"), forState: UIControlState.Normal)
       }
     }
-    /*
-    // MARK: - Navigation
+  }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+  func editNotes() {
+    let realm = Realm()
+    realm.write {
+      self.singleIris.note = self.notes.text
     }
-    */
+  }
+  
 
 }

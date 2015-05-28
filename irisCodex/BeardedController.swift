@@ -36,7 +36,7 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
   }
   
   func getIrises(category:String) -> AnyObject {
-    var irises = Realm().objects(Iris).filter("category = '\(category)'")
+    var irises = Realm().objects(Iris).filter("category = '\(category)'").sorted("name")
     return irises
   }
   
@@ -59,18 +59,18 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
   }
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-    let irises = Realm().objects(Iris).filter("category = '\(self.title!)'")
+    let irises = Realm().objects(Iris).filter("category = '\(self.title!)'").sorted("name")
     let iris = irises[indexPath.row]
     cell.textLabel?.text = iris.name
     cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
     println("\(iris.name) - \(iris.id)")
     if (iris.favorite) {
-      var imageName = "star2@1x.png"
+      var imageName = "star2sm.png"
       var image = UIImage(named: imageName)
       //println("\(imageName) - \(iris.id)")
       cell.imageView?.image = image
     } else {
-      cell.imageView?.image = UIImage(named: "star1@1x.png")
+      cell.imageView?.image = UIImage(named: "star1sm.png")
     }
     return cell
   }
@@ -101,7 +101,7 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
     if segue.identifier == "irisDetail" {
       if let destinationController = segue.destinationViewController as? irisDetailController {
         if let irisIndex = beardedIrisTable.indexPathForSelectedRow() {
-          let irises = Realm().objects(Iris).filter("category = '\(self.title!)'")
+          let irises = Realm().objects(Iris).filter("category = '\(self.title!)'").sorted("name")
           let iris = irises[irisIndex.row]
           destinationController.singleIris = iris
         }

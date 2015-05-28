@@ -44,12 +44,12 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
     cell.textLabel?.text = iris.name
     cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
     if (iris.favorite) {
-      var imageName = "star2@1x.png"
+      var imageName = "star2sm.png"
       var image = UIImage(named: imageName)
       //println("\(imageName) - \(iris.id)")
       cell.imageView?.image = image
     } else {
-      cell.imageView?.image = UIImage(named: "star1@1x.png")
+      cell.imageView?.image = UIImage(named: "star1sm.png")
     }
     return cell
   }

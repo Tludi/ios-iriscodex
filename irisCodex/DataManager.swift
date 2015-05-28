@@ -57,7 +57,7 @@ class DataManager {
           var irisRegion13: Bool? = irisDictionary["R13"].bool
           var irisIrisType: String? = irisDictionary["Type"].string
           var irisYear: String? = irisDictionary["Year"].string
-          var irisNote: String? = "Notes:"
+          var irisNote: String? = ""
           var irisFavorite: Bool? = false
           
           var newIris = Irises(id: irisId!, name: irisName!, hybridizer: irisHybridizer!, category: irisCategory!, gardenOne: irisGardenOne!, gardenTwo: irisGardenTwo!, gardenThree: irisGardenThree!, gardenFour: irisGardenFour!, gardenFive: irisGardenFive!, gardenSix: irisGardenSix!, region13: irisRegion13!, irisType: irisIrisType!, year: irisYear!, note: irisNote!, favorite: irisFavorite!)

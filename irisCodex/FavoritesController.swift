@@ -13,11 +13,13 @@ class FavoritesController: UIViewController, UITableViewDataSource, UITableViewD
 
   let irises = Realm().objects(Iris).filter("favorite = true")
   
+  @IBOutlet weak var favoriteTable: UITableView!
   @IBAction func toggleMenu(sender: AnyObject) {
     toggleSideMenuView()
   }
   
-  @IBAction func favoritesButton(sender: UIButton) {
+  override func viewWillAppear(animated: Bool) {
+    self.favoriteTable.reloadData()
   }
   
   
@@ -43,13 +45,24 @@ class FavoritesController: UIViewController, UITableViewDataSource, UITableViewD
     var cell = tableView.dequeueReusableCellWithIdentifier("Cell3", forIndexPath: indexPath) as! UITableViewCell
     //let irises = Realm().objects(Iris)//.filter("favorite = true")
     let iris = irises[indexPath.row]
-    //cell.textLabel?.text = iris.name
-    //cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
+    cell.textLabel?.text = iris.name
+    cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
     //cell.imageView?.image = UIImage(named: "star2@1x.png")
     
     return cell
   }
 
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "favoriteSegue" {
+      if let destinationController = segue.destinationViewController as? irisDetailController {
+        if let irisIndex = favoriteTable.indexPathForSelectedRow() {
+          let irises = Realm().objects(Iris).filter("favorite = true")
+          let iris = irises[irisIndex.row]
+          destinationController.singleIris = iris
+        }
+      }
+    }
+  }
     /*
     // MARK: - Navigation
 
