@@ -15,6 +15,7 @@ class irisDetailController: UIViewController, UITextViewDelegate {
   let nonFavoriteImageFile = UIImage(named: "star1.png")
   let favoriteImageFile = UIImage(named: "star2.png")
   
+  @IBOutlet weak var coverViewForKeyboard: UIView!
   @IBOutlet weak var favImage: UIButton!
   @IBAction func editFavorite(sender: UIButton) {
     editFavorites()
@@ -89,6 +90,7 @@ class irisDetailController: UIViewController, UITextViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+
     // Do any additional setup after loading the view.
   }
   
@@ -130,6 +132,15 @@ class irisDetailController: UIViewController, UITextViewDelegate {
     realm.write {
       self.singleIris.note = self.notes.text
     }
+  }
+  
+  func showCoverView() {
+    coverViewForKeyboard.backgroundColor = UIColor(red: 20.0 / 255, green: 59.0 / 255, blue: 102.0 / 255, alpha: 1.0)
+  }
+  
+  func hideCoverView() {
+    coverViewForKeyboard.backgroundColor = UIColor(red: 160.0 / 255, green: 97.0 / 255, blue: 5.0 / 255, alpha: 1.0)
+
   }
   
 

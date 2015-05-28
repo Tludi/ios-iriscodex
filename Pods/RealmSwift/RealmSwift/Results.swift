@@ -254,10 +254,10 @@ public final class Results<T: Object>: Printable {
 
     :param: property The name of a property conforming to `AddableType` to calculate average on.
 
-    :returns: The average of the given property over all objects in the Results.
+    :returns: The average of the given property over all objects in the Results, or `nil` if the Results is empty.
     */
-    public func average<U: AddableType>(property: String) -> U {
-        return rlmResults.averageOfProperty(property) as AnyObject as! U
+    public func average<U: AddableType>(property: String) -> U? {
+        return rlmResults.averageOfProperty(property) as! U?
     }
 }
 
@@ -283,4 +283,14 @@ extension Results: CollectionType {
     /// The collection's "past the end" position.
     /// endIndex is not a valid argument to subscript, and is always reachable from startIndex by zero or more applications of successor().
     public var endIndex: Int { return count }
+}
+
+// MARK: Variadic Arguments Support
+
+extension Results: CVarArgType {
+    /// Transform `self` into a series of machine words that can be
+    /// appropriately interpreted by C varargs
+    public func encode() -> [Word] {
+        return rlmResults.encode()
+    }
 }

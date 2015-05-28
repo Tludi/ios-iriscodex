@@ -19,6 +19,7 @@
 #import <Realm/RLMConstants.h>
 #import <objc/runtime.h>
 
+#import <realm/array.hpp>
 #import <realm/binary_data.hpp>
 #import <realm/string_data.hpp>
 
@@ -26,22 +27,6 @@
 @class RLMProperty;
 @class RLMRealm;
 @class RLMSchema;
-
-// Helper structs for unretained<> to make unretained<id> work
-template<typename T>
-struct RLMUnretainedPtr {
-    using type = __unsafe_unretained T *const;
-};
-
-template<>
-struct RLMUnretainedPtr<id> {
-    using type = __unsafe_unretained id const;
-};
-
-// type alias for const unretained pointers
-// only needs to be used in function/method definitions, not declarations
-template<typename T>
-using unretained = typename RLMUnretainedPtr<T>::type;
 
 NSException *RLMException(NSString *message, NSDictionary *userInfo = nil);
 NSException *RLMException(std::exception const& exception);
@@ -134,7 +119,7 @@ static inline NSString * RLMStringDataToNSString(realm::StringData stringData) {
                                   encoding:NSUTF8StringEncoding];
 }
 
-static inline realm::StringData RLMStringDataWithNSString(NSString *string) {
+static inline realm::StringData RLMStringDataWithNSString(__unsafe_unretained NSString *const string) {
     static_assert(sizeof(size_t) >= sizeof(NSUInteger),
                   "Need runtime overflow check for NSUInteger to size_t conversion");
     return realm::StringData(string.UTF8String,
@@ -142,6 +127,10 @@ static inline realm::StringData RLMStringDataWithNSString(NSString *string) {
 }
 
 // Binary convertion utilities
-static inline realm::BinaryData RLMBinaryDataForNSData(NSData *data) {
+static inline realm::BinaryData RLMBinaryDataForNSData(__unsafe_unretained NSData *const data) {
     return realm::BinaryData(static_cast<const char *>(data.bytes), data.length);
+}
+
+static inline NSUInteger RLMConvertNotFound(size_t index) {
+    return index == realm::not_found ? NSNotFound : index;
 }

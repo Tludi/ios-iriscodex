@@ -5,10 +5,14 @@ use_frameworks!
 
 
 target 'irisCodex' do
+  pod "Realm"
   pod "RealmSwift"
+  pod "IQKeyboardManager"
 end
 
 target 'irisCodexTests' do
+  pod "Realm"
   pod "RealmSwift"
+  pod "IQKeyboardManager"
 end
 

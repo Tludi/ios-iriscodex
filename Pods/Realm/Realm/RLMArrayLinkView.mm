@@ -49,13 +49,13 @@
 //
 // validation helpers
 //
-static inline void RLMLinkViewArrayValidateAttached(unretained<RLMArrayLinkView> ar) {
+static inline void RLMLinkViewArrayValidateAttached(__unsafe_unretained RLMArrayLinkView *const ar) {
     if (!ar->_backingLinkView->is_attached()) {
         @throw RLMException(@"RLMArray is no longer valid");
     }
     RLMCheckThread(ar->_realm);
 }
-static inline void RLMLinkViewArrayValidateInWriteTransaction(unretained<RLMArrayLinkView> ar) {
+static inline void RLMLinkViewArrayValidateInWriteTransaction(__unsafe_unretained RLMArrayLinkView *const ar) {
     // first verify attached
     RLMLinkViewArrayValidateAttached(ar);
 
@@ -63,7 +63,7 @@ static inline void RLMLinkViewArrayValidateInWriteTransaction(unretained<RLMArra
         @throw RLMException(@"Can't mutate a persisted array outside of a write transaction.");
     }
 }
-static inline void RLMValidateObjectClass(unretained<RLMObjectBase> obj, unretained<NSString> expected) {
+static inline void RLMValidateObjectClass(__unsafe_unretained RLMObjectBase *const obj, __unsafe_unretained NSString *const expected) {
     if (!obj) {
         @throw RLMException(@"Object is `nil`", @{@"expected class" : expected});
     }
@@ -218,12 +218,7 @@ static inline void RLMValidateObjectClass(unretained<RLMObjectBase> obj, unretai
 
     // call find on backing array
     size_t object_ndx = object->_row.get_index();
-    size_t result = _backingLinkView->find(object_ndx);
-    if (result == realm::not_found) {
-        return NSNotFound;
-    }
-
-    return result;
+    return RLMConvertNotFound(_backingLinkView->find(object_ndx));
 }
 
 - (id)valueForKey:(NSString *)key {
@@ -257,11 +252,10 @@ static inline void RLMValidateObjectClass(unretained<RLMObjectBase> obj, unretai
     std::vector<bool> order;
     RLMGetColumnIndices(_realm.schema[_objectClassName], properties, columns, order);
 
-    realm::TableView const &tv = _backingLinkView->get_sorted_view(move(columns), move(order));
     auto query = std::make_unique<realm::Query>(_backingLinkView->get_target_table().where(_backingLinkView));
     return [RLMResults resultsWithObjectClassName:self.objectClassName
                                                  query:move(query)
-                                                  view:tv
+                                                  view:_backingLinkView->get_sorted_view(move(columns), move(order))
                                                  realm:_realm];
 
 }
@@ -274,6 +268,14 @@ static inline void RLMValidateObjectClass(unretained<RLMObjectBase> obj, unretai
     return [RLMResults resultsWithObjectClassName:self.objectClassName
                                             query:std::make_unique<realm::Query>(query)
                                             realm:_realm];
+}
+
+- (NSUInteger)indexOfObjectWithPredicate:(NSPredicate *)predicate {
+    RLMLinkViewArrayValidateAttached(self);
+
+    realm::Query query = _backingLinkView->get_target_table().where(_backingLinkView);
+    RLMUpdateQueryWithPredicate(&query, predicate, _realm.schema, _realm.schema[self.objectClassName]);
+    return RLMConvertNotFound(query.find());
 }
 
 @end

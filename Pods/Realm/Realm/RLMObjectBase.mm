@@ -35,7 +35,7 @@ const NSUInteger RLMDescriptionMaxDepth = 5;
 // standalone init
 - (instancetype)init {
     if (RLMSchema.sharedSchema) {
-        RLMObjectSchema *objectSchema = [self.class sharedSchema];
+        __unsafe_unretained RLMObjectSchema *const objectSchema = [self.class sharedSchema];
         self = [self initWithRealm:nil schema:objectSchema];
 
         // set default values
@@ -84,8 +84,8 @@ const NSUInteger RLMDescriptionMaxDepth = 5;
     return self;
 }
 
-- (instancetype)initWithRealm:(unretained<RLMRealm>)realm
-                       schema:(unretained<RLMObjectSchema>)schema {
+- (instancetype)initWithRealm:(__unsafe_unretained RLMRealm *const)realm
+                       schema:(__unsafe_unretained RLMObjectSchema *const)schema {
     self = [super init];
     if (self) {
         _realm = realm;
@@ -178,12 +178,6 @@ const NSUInteger RLMDescriptionMaxDepth = 5;
     }
     else {
         return [super hash];
-    }
-}
-
-- (void)dealloc {
-    if (_realm && !self.isInvalidated) {
-        RLMCheckThread(_realm);
     }
 }
 
