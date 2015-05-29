@@ -22,6 +22,7 @@ class irisDetailController: UIViewController, UITextViewDelegate {
   }
 
 
+  @IBOutlet weak var detailScrollView: UIScrollView!
   @IBOutlet weak var irisNameLabel: UILabel!
   @IBOutlet weak var hybridizerLabel: UILabel!
   @IBOutlet weak var yearLabel: UILabel!
@@ -77,10 +78,8 @@ class irisDetailController: UIViewController, UITextViewDelegate {
     
     if singleIris.favorite {
       favImage.setImage(UIImage(named: "star2.png"), forState: UIControlState.Normal)
-
     } else {
       favImage.setImage(UIImage(named: "star1.png"), forState: UIControlState.Normal)
-
     }
     
   } // end viewWillAppear
@@ -92,7 +91,9 @@ class irisDetailController: UIViewController, UITextViewDelegate {
   }
   
   override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-    view.endEditing(true)
+    super.touchesBegan(touches, withEvent: event)
+    // view.endEditing(true)
+    notes.resignFirstResponder()
   }
   
   override func didReceiveMemoryWarning() {

@@ -526,6 +526,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="detailScrollView" destination="fei-ov-uCu" id="gC6-72-u67"/>
                         <outlet property="favImage" destination="TBX-Ks-Gzt" id="O2g-tK-Lgk"/>
                         <outlet property="garden1" destination="hDQ-2P-n6f" id="EmP-Gh-9wk"/>
                         <outlet property="garden2" destination="M1A-Eh-cFa" id="NWK-L0-n9r"/>

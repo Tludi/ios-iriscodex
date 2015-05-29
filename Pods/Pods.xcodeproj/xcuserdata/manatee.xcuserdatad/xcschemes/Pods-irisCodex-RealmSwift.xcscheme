@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "832F685A4DEC8840E22744FF"
+               BlueprintIdentifier = "DB677F885AD99E7B97255B93"
                BuildableName = "RealmSwift.framework"
                BlueprintName = "Pods-irisCodex-RealmSwift"
                ReferencedContainer = "container:Pods.xcodeproj">

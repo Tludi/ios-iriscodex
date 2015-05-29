@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-irisCodex-IQKeyboardManager.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-irisCodex-Realm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,11 +15,6 @@
 			<false/>
 		</dict>
 		<key>Pods-irisCodex.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-irisCodexTests-IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,42 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3B48C4F3D0D40BB27255F268</key>
+		<key>11BAD6DA9536DFC4176A632B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4AF96C9077CEA39E542A9666</key>
+		<key>37E43DDDC592DDA1DFB7A647</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5FA05307AF057FCBE1E8AD57</key>
+		<key>8A0F14DE2D7EB2D88C109403</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>73652555F135DF7419A4B4F5</key>
+		<key>98D9A347EACCEF433EFD6A55</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>832F685A4DEC8840E22744FF</key>
+		<key>DB677F885AD99E7B97255B93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>936C92C55B81E1EC22F74DB7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AF062C21DA85C68DCE924F2A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EC2B05224A4B1EADF3E3D581</key>
+		<key>E8C197D038BC8C0885EA0A0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

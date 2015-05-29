@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-import IQKeyboardManager
+// import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
       UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
       //IQKeyboardManager.sharedManager().enable = true
-      IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 0
+      //IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 0
     
     // print number of irises to the console
     println("number of Irises in Base Realm - \(allIrises.count)")

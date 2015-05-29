@@ -252,6 +252,7 @@
 				TargetAttributes = {
 					003BF9D51AF93D3200058BEF = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = LWH67H9CS7;
 					};
 					003BF9ED1AF93D3200058BEF = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -541,10 +542,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 56549578F6BEA477C2397352 /* Pods-irisCodex.debug.xcconfig */;
 			buildSettings = {
+				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = irisCodex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -553,9 +558,13 @@
 			baseConfigurationReference = F70C6D0D948AC7C4691EBB4D /* Pods-irisCodex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = irisCodex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
