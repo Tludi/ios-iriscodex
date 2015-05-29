@@ -15,15 +15,12 @@ class irisDetailController: UIViewController, UITextViewDelegate {
   let nonFavoriteImageFile = UIImage(named: "star1.png")
   let favoriteImageFile = UIImage(named: "star2.png")
   
-  @IBOutlet weak var coverViewForKeyboard: UIView!
+
   @IBOutlet weak var favImage: UIButton!
   @IBAction func editFavorite(sender: UIButton) {
     editFavorites()
   }
-  @IBOutlet weak var favorite: UIButton!
-  @IBAction func addFavorite(sender: UIButton) {
-    editFavorites()
-  }
+
 
   @IBOutlet weak var irisNameLabel: UILabel!
   @IBOutlet weak var hybridizerLabel: UILabel!
@@ -80,10 +77,10 @@ class irisDetailController: UIViewController, UITextViewDelegate {
     
     if singleIris.favorite {
       favImage.setImage(UIImage(named: "star2.png"), forState: UIControlState.Normal)
-      favorite.setTitle("Remove From Favorites", forState: .Normal)
+
     } else {
       favImage.setImage(UIImage(named: "star1.png"), forState: UIControlState.Normal)
-      favorite.setTitle("Add To Favorites", forState: .Normal)
+
     }
     
   } // end viewWillAppear
@@ -117,11 +114,11 @@ class irisDetailController: UIViewController, UITextViewDelegate {
     realm.write {
       if self.singleIris.favorite {
         self.singleIris.favorite = false
-        self.favorite.setTitle("Add To Favorites", forState: .Normal)
+
         self.favImage.setImage(UIImage(named: "star1.png"), forState: UIControlState.Normal)
       } else {
         self.singleIris.favorite = true
-        self.favorite.setTitle("Remove From Favorites", forState: .Normal)
+
         self.favImage.setImage(UIImage(named: "star2.png"), forState: UIControlState.Normal)
       }
     }
@@ -132,15 +129,6 @@ class irisDetailController: UIViewController, UITextViewDelegate {
     realm.write {
       self.singleIris.note = self.notes.text
     }
-  }
-  
-  func showCoverView() {
-    coverViewForKeyboard.backgroundColor = UIColor(red: 20.0 / 255, green: 59.0 / 255, blue: 102.0 / 255, alpha: 1.0)
-  }
-  
-  func hideCoverView() {
-    coverViewForKeyboard.backgroundColor = UIColor(red: 160.0 / 255, green: 97.0 / 255, blue: 5.0 / 255, alpha: 1.0)
-
   }
   
 

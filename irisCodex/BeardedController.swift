@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import CoreData
 import RealmSwift
 
 
@@ -19,7 +18,7 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
     toggleSideMenuView()
     }
   @IBAction func addIrisButton(sender: AnyObject) {
-  addNewItem()
+  //addNewItem()
   }
   
   @IBAction func clearDatabase(sender: AnyObject) {
@@ -32,21 +31,21 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
     if self.title == nil {
       self.title = "Bearded"
     }
-    //self.beardedIrisTable.reloadData()
   }
   
   func getIrises(category:String) -> AnyObject {
+    // query irises by category then sort
     var irises = Realm().objects(Iris).filter("category = '\(category)'").sorted("name")
     return irises
   }
   
   override func viewWillAppear(animated: Bool) {
+    // reload the table due to changing favorite status in detail view
     self.beardedIrisTable.reloadData()
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    //self.beardedIrisTable.reloadData()
   }
   
   // setup the tableView sections and cells
@@ -79,9 +78,21 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let irises = Realm().objects(Iris).filter("category = '\(self.title!)'")
     let iris = irises[indexPath.row]
-//    println(iris)
   }
   
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "irisDetail" {
+      if let destinationController = segue.destinationViewController as? irisDetailController {
+        if let irisIndex = beardedIrisTable.indexPathForSelectedRow() {
+          let irises = Realm().objects(Iris).filter("category = '\(self.title!)'").sorted("name")
+          let iris = irises[irisIndex.row]
+          destinationController.singleIris = iris
+        }
+      }
+    }
+  }
+  
+  // ****** the following is commented out to limit editing cells ********
 //  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
 //    return true
 //  }
@@ -97,59 +108,43 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
 //    }
 //  }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "irisDetail" {
-      if let destinationController = segue.destinationViewController as? irisDetailController {
-        if let irisIndex = beardedIrisTable.indexPathForSelectedRow() {
-          let irises = Realm().objects(Iris).filter("category = '\(self.title!)'").sorted("name")
-          let iris = irises[irisIndex.row]
-          destinationController.singleIris = iris
-        }
-      }
-    }
-  }
+//  func addNewItem() {
+//    var irisPrompt = UIAlertController(title: "New Iris", message: "Enter Text", preferredStyle: .Alert)
+//    var nameTextField: UITextField?
+//    var hybridizerTextField: UITextField?
+//    irisPrompt.addTextFieldWithConfigurationHandler {
+//      (nameField) -> Void in
+//      nameTextField = nameField
+//      nameField.placeholder = "Name"
+//    }
+//    irisPrompt.addTextFieldWithConfigurationHandler {
+//      (hybridizerField) -> Void in
+//      hybridizerTextField = hybridizerField
+//      hybridizerField.placeholder = "Hybridizer"
+//    }
+//    
+//    irisPrompt.addAction(UIAlertAction(title: "OK",
+//      style: .Default,
+//      handler: {(action) -> Void in
+//      if let nameField = nameTextField  {
+//        self.saveNewIris(nameField.text, hybridizer: hybridizerTextField!.text)
+//      }
+//    }))
+//    
+//    self.presentViewController(irisPrompt, animated: true, completion: nil)
+//  }
+//  
+//  func saveNewIris(name: String, hybridizer: String) {
+//    let realm = Realm()
+//    let iris = Iris()
+//    iris.name = name
+//    iris.hybridizer = hybridizer
+//    realm.write {
+//      realm.add(iris)
+//    }
+//    self.beardedIrisTable.reloadData()
+//  }
   
-  
-  
-  // let addItemAlertViewTag = 0
-  // let addItemTextAlertViewTag = 1
-  func addNewItem() {
-    var irisPrompt = UIAlertController(title: "New Iris", message: "Enter Text", preferredStyle: .Alert)
-    var nameTextField: UITextField?
-    var hybridizerTextField: UITextField?
-    irisPrompt.addTextFieldWithConfigurationHandler {
-      (nameField) -> Void in
-      nameTextField = nameField
-      nameField.placeholder = "Name"
-    }
-    irisPrompt.addTextFieldWithConfigurationHandler {
-      (hybridizerField) -> Void in
-      hybridizerTextField = hybridizerField
-      hybridizerField.placeholder = "Hybridizer"
-    }
-    
-    irisPrompt.addAction(UIAlertAction(title: "OK",
-      style: .Default,
-      handler: {(action) -> Void in
-      if let nameField = nameTextField  {
-        self.saveNewIris(nameField.text, hybridizer: hybridizerTextField!.text)
-      }
-    }))
-    
-    self.presentViewController(irisPrompt, animated: true, completion: nil)
-  }
-  
-  func saveNewIris(name: String, hybridizer: String) {
-    let realm = Realm()
-    let iris = Iris()
-    iris.name = name
-    iris.hybridizer = hybridizer
-    realm.write {
-      realm.add(iris)
-    }
-    self.beardedIrisTable.reloadData()
-    //self.beardedIrisTable.reloadRowsAtIndexPaths(index, withRowAnimation: UITableViewRowAnimation.Automatic )
-  }
   
   func clearDatabase() {
     let realm = Realm()

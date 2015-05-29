@@ -80,6 +80,6 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   }
   
   // ***** Search methods *****
-
+  // To be added as a future feature
 
 }
