@@ -30,6 +30,7 @@
 		EF7B42AF1B0176FF007F4557 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */; };
 		EF7B42B11B0177C3007F4557 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B42B01B0177C3007F4557 /* DataManager.swift */; };
 		EFBCD1E51B01BCC60028441E /* bundledIris.realm in Resources */ = {isa = PBXBuildFile; fileRef = EFBCD1E41B01BCC60028441E /* bundledIris.realm */; };
+		EFCDE7801B1C154C00BD7FFB /* TPKeyboardAvoiding in Resources */ = {isa = PBXBuildFile; fileRef = EFCDE77F1B1C154C00BD7FFB /* TPKeyboardAvoiding */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = irisCodex/SwiftyJSON.swift; sourceTree = "<group>"; };
 		EF7B42B01B0177C3007F4557 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EFBCD1E41B01BCC60028441E /* bundledIris.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = bundledIris.realm; sourceTree = "<group>"; };
+		EFCDE77F1B1C154C00BD7FFB /* TPKeyboardAvoiding */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TPKeyboardAvoiding; sourceTree = "<group>"; };
 		F70C6D0D948AC7C4691EBB4D /* Pods-irisCodex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodex.release.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodex/Pods-irisCodex.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 		00DD66421B165F1C002CFDFC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				EFCDE77F1B1C154C00BD7FFB /* TPKeyboardAvoiding */,
 				00A46F131B040DFF0005DCA9 /* allIrises.json */,
 			);
 			name = data;
@@ -284,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCDE7801B1C154C00BD7FFB /* TPKeyboardAvoiding in Resources */,
 				EFBCD1E51B01BCC60028441E /* bundledIris.realm in Resources */,
 				003BF9E41AF93D3200058BEF /* Main.storyboard in Resources */,
 				003BF9E91AF93D3200058BEF /* LaunchScreen.xib in Resources */,

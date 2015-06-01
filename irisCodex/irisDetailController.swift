@@ -91,9 +91,9 @@ class irisDetailController: UIViewController, UITextViewDelegate {
   }
   
   override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-    super.touchesBegan(touches, withEvent: event)
-    // view.endEditing(true)
-    notes.resignFirstResponder()
+    //super.touchesBegan(touches, withEvent: event)
+    view.endEditing(true)
+    //notes.resignFirstResponder()
   }
   
   override func didReceiveMemoryWarning() {
