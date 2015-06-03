@@ -30,9 +30,11 @@ class MenuTableViewController: UITableViewController {
     // MARK: - Table view data source
   override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-    header.contentView.backgroundColor = UIColor.grayColor()
-    header.textLabel.textColor = UIColor.whiteColor()
-    header.alpha = 0.5
+    header.contentView.backgroundColor = UIColor.whiteColor()
+    
+    header.textLabel.textColor = UIColor.darkGrayColor()
+    header.alpha = 0.3
+    header.textLabel.textAlignment = NSTextAlignment.Center
   }
   
   override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

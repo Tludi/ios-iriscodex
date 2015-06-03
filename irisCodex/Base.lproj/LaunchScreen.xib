@@ -10,16 +10,6 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IRIS CODEX" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="140" y="339" width="200" height="43"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="43" id="4fC-0e-VSo"/>
-                        <constraint firstAttribute="width" constant="200" id="BzR-f2-r9L"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="36"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="m76-1e-nDZ">
                     <rect key="frame" x="215" y="422" width="50" height="50"/>
                     <constraints>
@@ -27,40 +17,28 @@
                         <constraint firstAttribute="height" constant="50" id="t9c-AW-Kb1"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wonderlogo@1x" translatesAutoresizingMaskIntoConstraints="NO" id="HgG-s8-QWx">
-                    <rect key="frame" x="120" y="91" width="240" height="240"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="codexLogo" translatesAutoresizingMaskIntoConstraints="NO" id="O4z-p1-wBh">
+                    <rect key="frame" x="165" y="165" width="150" height="150"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="240" id="0tk-YI-fC0"/>
-                        <constraint firstAttribute="height" constant="240" id="JOU-qq-NXG"/>
+                        <constraint firstAttribute="width" constant="150" id="cvV-XO-yeg"/>
+                        <constraint firstAttribute="height" constant="150" id="upR-xk-Mfm"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.96091257720274414" green="0.98826359354473536" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="HgG-s8-QWx" secondAttribute="centerX" id="7Gd-x6-FYk"/>
                 <constraint firstAttribute="centerX" secondItem="m76-1e-nDZ" secondAttribute="centerX" id="7ZR-u4-g7S"/>
+                <constraint firstAttribute="centerY" secondItem="O4z-p1-wBh" secondAttribute="centerY" id="8bB-5Z-Rf9"/>
                 <constraint firstAttribute="bottom" secondItem="m76-1e-nDZ" secondAttribute="bottom" constant="8" id="J0g-X2-hLT"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="HgG-s8-QWx" secondAttribute="bottom" constant="8" id="JCg-1k-dMy"/>
-                <constraint firstItem="m76-1e-nDZ" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="110" id="bs9-d9-dhU"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="HgG-s8-QWx" secondAttribute="bottom" constant="8" id="eUu-R6-SgP"/>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="hwL-dv-75h"/>
-                <constraint firstItem="HgG-s8-QWx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="xOV-1P-VHH"/>
-                <constraint firstItem="HgG-s8-QWx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="91" id="zjt-Zn-OXS"/>
+                <constraint firstAttribute="centerX" secondItem="O4z-p1-wBh" secondAttribute="centerX" id="S0I-08-lGH"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="xOV-1P-VHH"/>
-                    <exclude reference="JCg-1k-dMy"/>
-                    <exclude reference="bs9-d9-dhU"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
     <resources>
+        <image name="codexLogo" width="204" height="204"/>
         <image name="logo" width="91" height="90"/>
-        <image name="wonderlogo@1x" width="575" height="575"/>
     </resources>
 </document>

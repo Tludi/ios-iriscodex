@@ -22,6 +22,8 @@
 		003BFA021AF93F2800058BEF /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BFA001AF93F2800058BEF /* ENSideMenu.swift */; };
 		003BFA031AF93F2800058BEF /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BFA011AF93F2800058BEF /* ENSideMenuNavigationController.swift */; };
 		003BFA051AF93FCD00058BEF /* SideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BFA041AF93FCD00058BEF /* SideNavigationController.swift */; };
+		006E65E91B1F67EA00F8B1C0 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006E65E61B1F67EA00F8B1C0 /* TPKeyboardAvoidingScrollView.m */; };
+		006E65EA1B1F67EA00F8B1C0 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 006E65E81B1F67EA00F8B1C0 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		00A46F141B040DFF0005DCA9 /* allIrises.json in Resources */ = {isa = PBXBuildFile; fileRef = 00A46F131B040DFF0005DCA9 /* allIrises.json */; };
 		96E25560AA674508C58384C4 /* Pods_irisCodexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A323143D321D78147786B47C /* Pods_irisCodexTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D67B5F41C20EF6A68AF0543F /* Pods_irisCodex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDF7AC1AF5F7D0D9E307B05 /* Pods_irisCodex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -30,7 +32,6 @@
 		EF7B42AF1B0176FF007F4557 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */; };
 		EF7B42B11B0177C3007F4557 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B42B01B0177C3007F4557 /* DataManager.swift */; };
 		EFBCD1E51B01BCC60028441E /* bundledIris.realm in Resources */ = {isa = PBXBuildFile; fileRef = EFBCD1E41B01BCC60028441E /* bundledIris.realm */; };
-		EFCDE7801B1C154C00BD7FFB /* TPKeyboardAvoiding in Resources */ = {isa = PBXBuildFile; fileRef = EFCDE77F1B1C154C00BD7FFB /* TPKeyboardAvoiding */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,11 @@
 		003BFA001AF93F2800058BEF /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		003BFA011AF93F2800058BEF /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		003BFA041AF93FCD00058BEF /* SideNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationController.swift; sourceTree = "<group>"; };
+		006E65E51B1F67EA00F8B1C0 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		006E65E61B1F67EA00F8B1C0 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		006E65E71B1F67EA00F8B1C0 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		006E65E81B1F67EA00F8B1C0 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		006E65EB1B1F6AC100F8B1C0 /* irisCodex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "irisCodex-Bridging-Header.h"; sourceTree = "<group>"; };
 		00A46F131B040DFF0005DCA9 /* allIrises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allIrises.json; sourceTree = "<group>"; };
 		3FDF7AC1AF5F7D0D9E307B05 /* Pods_irisCodex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_irisCodex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56549578F6BEA477C2397352 /* Pods-irisCodex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodex/Pods-irisCodex.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,7 +80,6 @@
 		EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = irisCodex/SwiftyJSON.swift; sourceTree = "<group>"; };
 		EF7B42B01B0177C3007F4557 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EFBCD1E41B01BCC60028441E /* bundledIris.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = bundledIris.realm; sourceTree = "<group>"; };
-		EFCDE77F1B1C154C00BD7FFB /* TPKeyboardAvoiding */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TPKeyboardAvoiding; sourceTree = "<group>"; };
 		F70C6D0D948AC7C4691EBB4D /* Pods-irisCodex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodex.release.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodex/Pods-irisCodex.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +109,7 @@
 				003BF9D81AF93D3200058BEF /* irisCodex */,
 				003BF9F11AF93D3200058BEF /* irisCodexTests */,
 				003BF9D71AF93D3200058BEF /* Products */,
+				006E65EB1B1F6AC100F8B1C0 /* irisCodex-Bridging-Header.h */,
 				EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */,
 				003BFA001AF93F2800058BEF /* ENSideMenu.swift */,
 				003BFA011AF93F2800058BEF /* ENSideMenuNavigationController.swift */,
@@ -149,6 +155,10 @@
 		003BF9D91AF93D3200058BEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				006E65E51B1F67EA00F8B1C0 /* TPKeyboardAvoidingScrollView.h */,
+				006E65E61B1F67EA00F8B1C0 /* TPKeyboardAvoidingScrollView.m */,
+				006E65E71B1F67EA00F8B1C0 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				006E65E81B1F67EA00F8B1C0 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 				003BF9DA1AF93D3200058BEF /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -174,7 +184,6 @@
 		00DD66421B165F1C002CFDFC /* data */ = {
 			isa = PBXGroup;
 			children = (
-				EFCDE77F1B1C154C00BD7FFB /* TPKeyboardAvoiding */,
 				00A46F131B040DFF0005DCA9 /* allIrises.json */,
 			);
 			name = data;
@@ -287,7 +296,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFCDE7801B1C154C00BD7FFB /* TPKeyboardAvoiding in Resources */,
 				EFBCD1E51B01BCC60028441E /* bundledIris.realm in Resources */,
 				003BF9E41AF93D3200058BEF /* Main.storyboard in Resources */,
 				003BF9E91AF93D3200058BEF /* LaunchScreen.xib in Resources */,
@@ -410,12 +418,14 @@
 				002017111AF973EA00655F6F /* Irises.swift in Sources */,
 				EF7B42AF1B0176FF007F4557 /* SwiftyJSON.swift in Sources */,
 				003BF9E11AF93D3200058BEF /* BeardedController.swift in Sources */,
+				006E65E91B1F67EA00F8B1C0 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				003BF9DF1AF93D3200058BEF /* irisCodex.xcdatamodeld in Sources */,
 				003BFA031AF93F2800058BEF /* ENSideMenuNavigationController.swift in Sources */,
 				EF44B0981B02C63B00654320 /* irisDetailController.swift in Sources */,
 				0020170F1AF9567800655F6F /* AllIrisesController.swift in Sources */,
 				003BFA051AF93FCD00058BEF /* SideNavigationController.swift in Sources */,
 				EF3BC3A81B0FFDE3007F8AD8 /* FavoritesController.swift in Sources */,
+				006E65EA1B1F67EA00F8B1C0 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				001F8F6F1AFAD44B001E2B90 /* Iris.swift in Sources */,
 				003BF9DC1AF93D3200058BEF /* AppDelegate.swift in Sources */,
 			);
@@ -548,11 +558,16 @@
 			buildSettings = {
 				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = irisCodex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "irisCodex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -562,12 +577,17 @@
 			baseConfigurationReference = F70C6D0D948AC7C4691EBB4D /* Pods-irisCodex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = irisCodex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "irisCodex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
