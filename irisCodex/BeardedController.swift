@@ -21,6 +21,7 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
   //addNewItem()
   }
   
+  @IBOutlet weak var clearDatabaseButton: UIBarButtonItem!
   @IBAction func clearDatabase(sender: AnyObject) {
     clearDatabase()
   }
@@ -28,9 +29,10 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if self.title == nil {
-      self.title = "Bearded"
-    }
+    //*** comment out the three following lines to enable the clear database button ***
+    clearDatabaseButton.style = UIBarButtonItemStyle.Plain
+    clearDatabaseButton.enabled = false
+    clearDatabaseButton.title = nil
   }
   
   func getIrises(category:String) -> AnyObject {

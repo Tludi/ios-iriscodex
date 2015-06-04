@@ -16,6 +16,8 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   @IBAction func toggleMenu(sender: AnyObject) {
     toggleSideMenuView()
   }
+  @IBOutlet weak var menuButton: UIBarButtonItem!
+  @IBOutlet weak var spinner: UIActivityIndicatorView!
   
   // get all Irises
   let allIrises = Realm().objects(Iris)
@@ -31,7 +33,6 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    //self.allIrisesTable.reloadData()
   }
   
   // ***** setup the table and cells
@@ -46,7 +47,6 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
     if (iris.favorite) {
       var imageName = "star2sm.png"
       var image = UIImage(named: imageName)
-      //println("\(imageName) - \(iris.id)")
       cell.imageView?.image = image
     } else {
       cell.imageView?.image = UIImage(named: "star1sm.png")
@@ -57,7 +57,7 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   //setup what action happens when selecting individual cell
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let iris = allIrises[indexPath.row]
-    println(iris)
+    println(iris) // sends the selected iris row infor to the console
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -75,7 +75,9 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   // initial population of database or if database is empty
   func checkForData() {
     if allIrises.count == 0 {
-      DataManager.populateRealm(allIrisesTable)
+      menuButton.enabled = false
+      spinner.startAnimating()
+      DataManager.populateRealm(allIrisesTable, spinner: spinner, menuButton: menuButton)
     }
   }
   

@@ -110,7 +110,7 @@
                                 <action selector="toggleMenu:" destination="BYZ-38-t0r" id="9qx-5L-tZW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="✕" id="Nvx-cQ-Unl">
+                        <barButtonItem key="rightBarButtonItem" title="✕" id="Nvx-cQ-Unl">
                             <connections>
                                 <action selector="clearDatabase:" destination="BYZ-38-t0r" id="8dI-Y8-Udk"/>
                             </connections>
@@ -119,6 +119,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="beardedIrisTable" destination="h9L-iU-9iA" id="Sq7-dM-LuW"/>
+                        <outlet property="clearDatabaseButton" destination="Nvx-cQ-Unl" id="PD8-C9-gm9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -247,13 +248,18 @@
                                     <outlet property="delegate" destination="YYB-0v-I79" id="miB-YN-I9J"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lrR-g4-O6H">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="T76-zL-zUV" secondAttribute="trailing" id="2Q7-Z9-rLg"/>
                             <constraint firstItem="T76-zL-zUV" firstAttribute="bottom" secondItem="FW8-5P-mo7" secondAttribute="top" id="7Sd-Vg-TI4"/>
+                            <constraint firstAttribute="centerY" secondItem="lrR-g4-O6H" secondAttribute="centerY" id="JYB-ue-0tv"/>
                             <constraint firstItem="T76-zL-zUV" firstAttribute="leading" secondItem="2SC-0L-Ak7" secondAttribute="leading" id="c4L-6T-BVH"/>
                             <constraint firstItem="T76-zL-zUV" firstAttribute="top" secondItem="2SC-0L-Ak7" secondAttribute="top" id="oJK-TP-QEi"/>
+                            <constraint firstAttribute="centerX" secondItem="lrR-g4-O6H" secondAttribute="centerX" id="rh7-iI-UJ3"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -268,6 +274,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="allIrisesTable" destination="T76-zL-zUV" id="KGy-jY-xA1"/>
+                        <outlet property="menuButton" destination="Qdr-PU-3o5" id="bnH-Tt-XjS"/>
+                        <outlet property="spinner" destination="lrR-g4-O6H" id="f9U-RH-iDz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2C-lW-ddw" userLabel="First Responder" sceneMemberID="firstResponder"/>

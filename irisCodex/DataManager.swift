@@ -24,7 +24,8 @@ class DataManager {
     })
   }
   // populate Database (uses Realm.io
-  class func populateRealm(tableView: UITableView) ->  Void {
+//  class func populateRealm(tableView: UITableView) ->  Void {
+  class func populateRealm(tableView: UITableView, spinner: UIActivityIndicatorView, menuButton: UIBarButtonItem) ->  Void {
     let irises = Realm().objects(Iris)
     
     self.getIrisDataFromFileWithSuccess {
@@ -34,6 +35,7 @@ class DataManager {
     
       if let irisArray = json["iris"].array {
         println("ok so far")
+        
         var irisesFromJSON = [Irises]()
         
         for irisDictionary in irisArray {
@@ -58,12 +60,12 @@ class DataManager {
           
         } // end for irisDictionary
         println("name: \(irisesFromJSON[0].name) Hybridizer: \(irisesFromJSON[0].hybridizer)")
-        
+        println("JSON irises count - \(irisesFromJSON.count)")
         let realm = Realm()
         let irises = realm.objects(Iris)
         
         for i in 0 ..< irisesFromJSON.count {
-          println(irisesFromJSON[i].name)
+          println("\(irisesFromJSON[i].name) - \(i)")
           
           var newIrisId = irisesFromJSON[i].id
           var newIrisName = irisesFromJSON[i].name.lowercaseString.capitalizedString
@@ -85,10 +87,14 @@ class DataManager {
             realm.create(Iris.self, value: [newIrisId, newIrisName, newIrisHybridizer, newIrisCategory,  newIrisGardenOne, newIrisGardenTwo, newIrisGardenThree, newIrisGardenFour, newIrisGardenFive, newIrisGardenSix, newirisRegion13, newIrisIrisType, newIrisYear, newIrisNote, newIrisFavorite])
             
           } // end realm.write
-          dispatch_async(dispatch_get_main_queue(), {
-            tableView.reloadData()
-            return
-          })
+          if i == irisesFromJSON.count - 1 {
+            dispatch_async(dispatch_get_main_queue(), {
+              tableView.reloadData()
+              spinner.stopAnimating()
+              menuButton.enabled = true
+              return
+            })
+          }
         }
         
       } // end if let irisArray
