@@ -17,7 +17,6 @@ class FavoritesController: UIViewController, UITableViewDataSource, UITableViewD
   @IBAction func toggleMenu(sender: AnyObject) {
     toggleSideMenuView()
   }
-  
   @IBOutlet weak var addFavoriteView: UIView!
   
   override func viewWillAppear(animated: Bool) {
@@ -25,13 +24,11 @@ class FavoritesController: UIViewController, UITableViewDataSource, UITableViewD
     self.favoriteTable.reloadData()
   }
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     checkForNoFavoritesView()
   }
 
-  
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
@@ -47,11 +44,9 @@ class FavoritesController: UIViewController, UITableViewDataSource, UITableViewD
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCellWithIdentifier("Cell3", forIndexPath: indexPath) as! UITableViewCell
-    //let irises = Realm().objects(Iris)//.filter("favorite = true")
     let iris = irises[indexPath.row]
     cell.textLabel?.text = iris.name
     cell.detailTextLabel?.text = "\(iris.hybridizer) - \(iris.category)"
-    //cell.imageView?.image = UIImage(named: "star2@1x.png")
     
     return cell
   }
@@ -74,14 +69,6 @@ class FavoritesController: UIViewController, UITableViewDataSource, UITableViewD
       addFavoriteView.layer.cornerRadius = 10.0
     }
   }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

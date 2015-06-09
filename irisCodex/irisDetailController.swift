@@ -20,8 +20,6 @@ class irisDetailController: UIViewController, UITextViewDelegate {
   @IBAction func editFavorite(sender: UIButton) {
     editFavorites()
   }
-
-
   @IBOutlet weak var detailScrollView: UIScrollView!
   @IBOutlet weak var irisNameLabel: UILabel!
   @IBOutlet weak var hybridizerLabel: UILabel!
@@ -45,6 +43,7 @@ class irisDetailController: UIViewController, UITextViewDelegate {
     let emptyIris = "40x40empty2.png"
     let filledIris = "40x40filled2.png"
     
+    // TODO: need to try to refactor in future release
     if singleIris.garden1 {
       garden1.image = UIImage(named: filledIris)
     }else{
@@ -86,19 +85,14 @@ class irisDetailController: UIViewController, UITextViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    // Do any additional setup after loading the view.
   }
   
   override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-    //super.touchesBegan(touches, withEvent: event)
     view.endEditing(true)
-    //notes.resignFirstResponder()
   }
   
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
 
   // save the edited text in notes:
@@ -110,21 +104,21 @@ class irisDetailController: UIViewController, UITextViewDelegate {
     notes.resignFirstResponder()
   }
 
+  // toggle the favorite status of the iris and image
   func editFavorites() {
     let realm = Realm()
     realm.write {
       if self.singleIris.favorite {
         self.singleIris.favorite = false
-
         self.favImage.setImage(UIImage(named: "star1.png"), forState: UIControlState.Normal)
       } else {
         self.singleIris.favorite = true
-
         self.favImage.setImage(UIImage(named: "star2.png"), forState: UIControlState.Normal)
       }
     }
   }
 
+  // save the textView if edited
   func editNotes() {
     let realm = Realm()
     realm.write {

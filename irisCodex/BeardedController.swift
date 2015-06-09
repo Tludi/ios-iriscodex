@@ -9,18 +9,13 @@
 import UIKit
 import RealmSwift
 
-
 class BeardedController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet weak var beardedIrisTable: UITableView!
-//   toggle the side menu with the navigation button
+  // toggle the side menu with the navigation button
   @IBAction func toggleMenu(sender: AnyObject) {
     toggleSideMenuView()
     }
-  @IBAction func addIrisButton(sender: AnyObject) {
-  //addNewItem()
-  }
-  
   @IBOutlet weak var clearDatabaseButton: UIBarButtonItem!
   @IBAction func clearDatabase(sender: AnyObject) {
     clearDatabase()
@@ -30,9 +25,10 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
     super.viewDidLoad()
     
     //*** comment out the three following lines to disable the clear database button ***
-//    clearDatabaseButton.style = UIBarButtonItemStyle.Plain
-//    clearDatabaseButton.enabled = false
-//    clearDatabaseButton.title = nil
+    //*** also uncomment out realm.deleteall() in cleardatabase function below ***
+    clearDatabaseButton.style = UIBarButtonItemStyle.Plain
+    clearDatabaseButton.enabled = false
+    clearDatabaseButton.title = nil
   }
   
   func getIrises(category:String) -> AnyObject {
@@ -152,10 +148,11 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
     let realm = Realm()
     let iris = Iris()
     realm.write {
-      realm.deleteAll()
+      //*** disabled clearing database ***
+      //*** uncommment to allow clearing database ***
+      // realm.deleteAll()
     }
     self.beardedIrisTable.reloadData()
-    //self.beardedIrisTable.reloadRowsAtIndexPaths(index, withRowAnimation: UITableViewRowAnimation.Automatic )
   }
   
 

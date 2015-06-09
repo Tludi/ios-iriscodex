@@ -23,8 +23,8 @@ class DataManager {
       }
     })
   }
-  // populate Database (uses Realm.io
-//  class func populateRealm(tableView: UITableView) ->  Void {
+  
+  // populate Database (uses Realm.io)
   class func populateRealm(tableView: UITableView, spinner: UIActivityIndicatorView, menuButton: UIBarButtonItem, blurView: UIVisualEffectView) ->  Void {
     let irises = Realm().objects(Iris)
     
@@ -59,8 +59,9 @@ class DataManager {
           irisesFromJSON.append(newIris)
           
         } // end for irisDictionary
-        println("name: \(irisesFromJSON[0].name) Hybridizer: \(irisesFromJSON[0].hybridizer)")
-        println("JSON irises count - \(irisesFromJSON.count)")
+        
+        //println("name: \(irisesFromJSON[0].name) Hybridizer: \(irisesFromJSON[0].hybridizer)")
+        //println("JSON irises count - \(irisesFromJSON.count)")
         let realm = Realm()
         let irises = realm.objects(Iris)
         
@@ -87,6 +88,8 @@ class DataManager {
             realm.create(Iris.self, value: [newIrisId, newIrisName, newIrisHybridizer, newIrisCategory,  newIrisGardenOne, newIrisGardenTwo, newIrisGardenThree, newIrisGardenFour, newIrisGardenFive, newIrisGardenSix, newirisRegion13, newIrisIrisType, newIrisYear, newIrisNote, newIrisFavorite])
             
           } // end realm.write
+          
+          // check to see if all irises have been added then reload view
           if i == irisesFromJSON.count - 1 {
             dispatch_async(dispatch_get_main_queue(), {
               tableView.reloadData()

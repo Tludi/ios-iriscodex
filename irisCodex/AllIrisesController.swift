@@ -11,31 +11,20 @@ import RealmSwift
 
 class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UISearchControllerDelegate {
 
-  
   @IBOutlet weak var allIrisesTable: UITableView!
+  @IBOutlet weak var menuButton: UIBarButtonItem!
+  @IBOutlet weak var spinner: UIActivityIndicatorView!
+  @IBOutlet weak var codexLogo: UIImageView!
+  @IBOutlet weak var blurView: UIVisualEffectView!
   @IBAction func toggleMenu(sender: AnyObject) {
     toggleSideMenuView()
   }
-  @IBOutlet weak var menuButton: UIBarButtonItem!
-  @IBOutlet weak var spinner: UIActivityIndicatorView!
-  
-  @IBOutlet weak var codexLogo: UIImageView!
-  @IBOutlet weak var blurView: UIVisualEffectView!
-
-  
-  func toggleBlurView() {
-    //codexLogo.hidden = true
-    blurView.hidden = true
-  }
-  
-  
   // get all Irises
   let allIrises = Realm().objects(Iris)
   
   override func viewDidLoad() {
       super.viewDidLoad()
       checkForData()
-      //toggleBlurView()
   }
 
   override func viewWillAppear(animated: Bool) {
@@ -68,7 +57,7 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   //setup what action happens when selecting individual cell
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let iris = allIrises[indexPath.row]
-    println(iris) // sends the selected iris row infor to the console
+    println(iris) // sends the selected iris row info to the console
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -87,7 +76,6 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   func checkForData() {
     //blurView.hidden = false
     if allIrises.count == 0 {
-      //codexLogo.hidden = false
       blurView.hidden = false
       menuButton.enabled = false
       spinner.startAnimating()
