@@ -19,12 +19,23 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   @IBOutlet weak var menuButton: UIBarButtonItem!
   @IBOutlet weak var spinner: UIActivityIndicatorView!
   
+  @IBOutlet weak var codexLogo: UIImageView!
+  @IBOutlet weak var blurView: UIVisualEffectView!
+
+  
+  func toggleBlurView() {
+    //codexLogo.hidden = true
+    blurView.hidden = true
+  }
+  
+  
   // get all Irises
   let allIrises = Realm().objects(Iris)
   
   override func viewDidLoad() {
       super.viewDidLoad()
       checkForData()
+      //toggleBlurView()
   }
 
   override func viewWillAppear(animated: Bool) {
@@ -74,10 +85,13 @@ class AllIrisesController: UIViewController, UITableViewDataSource, UITableViewD
   
   // initial population of database or if database is empty
   func checkForData() {
+    //blurView.hidden = false
     if allIrises.count == 0 {
+      //codexLogo.hidden = false
+      blurView.hidden = false
       menuButton.enabled = false
       spinner.startAnimating()
-      DataManager.populateRealm(allIrisesTable, spinner: spinner, menuButton: menuButton)
+      DataManager.populateRealm(allIrisesTable, spinner: spinner, menuButton: menuButton, blurView: blurView)
     }
   }
   

@@ -30,9 +30,9 @@ class BeardedController: UIViewController, UITableViewDataSource, UITableViewDel
     super.viewDidLoad()
     
     //*** comment out the three following lines to disable the clear database button ***
-    clearDatabaseButton.style = UIBarButtonItemStyle.Plain
-    clearDatabaseButton.enabled = false
-    clearDatabaseButton.title = nil
+//    clearDatabaseButton.style = UIBarButtonItemStyle.Plain
+//    clearDatabaseButton.enabled = false
+//    clearDatabaseButton.title = nil
   }
   
   func getIrises(category:String) -> AnyObject {

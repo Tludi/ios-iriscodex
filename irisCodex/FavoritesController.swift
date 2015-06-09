@@ -18,16 +18,20 @@ class FavoritesController: UIViewController, UITableViewDataSource, UITableViewD
     toggleSideMenuView()
   }
   
+  @IBOutlet weak var addFavoriteView: UIView!
+  
   override func viewWillAppear(animated: Bool) {
+    checkForNoFavoritesView()
     self.favoriteTable.reloadData()
   }
   
   
   override func viewDidLoad() {
-      super.viewDidLoad()
-      // Do any additional setup after loading the view.
+    super.viewDidLoad()
+    checkForNoFavoritesView()
   }
 
+  
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
@@ -61,6 +65,13 @@ class FavoritesController: UIViewController, UITableViewDataSource, UITableViewD
           destinationController.singleIris = iris
         }
       }
+    }
+  }
+  
+  func checkForNoFavoritesView() {
+    if irises.count == 0 {
+      addFavoriteView.hidden = false
+      addFavoriteView.layer.cornerRadius = 10.0
     }
   }
     /*

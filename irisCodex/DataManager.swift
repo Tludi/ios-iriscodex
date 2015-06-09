@@ -25,7 +25,7 @@ class DataManager {
   }
   // populate Database (uses Realm.io
 //  class func populateRealm(tableView: UITableView) ->  Void {
-  class func populateRealm(tableView: UITableView, spinner: UIActivityIndicatorView, menuButton: UIBarButtonItem) ->  Void {
+  class func populateRealm(tableView: UITableView, spinner: UIActivityIndicatorView, menuButton: UIBarButtonItem, blurView: UIVisualEffectView) ->  Void {
     let irises = Realm().objects(Iris)
     
     self.getIrisDataFromFileWithSuccess {
@@ -92,6 +92,7 @@ class DataManager {
               tableView.reloadData()
               spinner.stopAnimating()
               menuButton.enabled = true
+              blurView.hidden = true
               return
             })
           }
