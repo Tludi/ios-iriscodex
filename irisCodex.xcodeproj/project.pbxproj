@@ -13,7 +13,6 @@
 		002017111AF973EA00655F6F /* Irises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002017101AF973EA00655F6F /* Irises.swift */; };
 		002017131AF9845E00655F6F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 002017121AF9845E00655F6F /* Podfile */; };
 		003BF9DC1AF93D3200058BEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BF9DB1AF93D3200058BEF /* AppDelegate.swift */; };
-		003BF9DF1AF93D3200058BEF /* irisCodex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 003BF9DD1AF93D3200058BEF /* irisCodex.xcdatamodeld */; };
 		003BF9E11AF93D3200058BEF /* BeardedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BF9E01AF93D3200058BEF /* BeardedController.swift */; };
 		003BF9E41AF93D3200058BEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003BF9E21AF93D3200058BEF /* Main.storyboard */; };
 		003BF9E61AF93D3200058BEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003BF9E51AF93D3200058BEF /* Images.xcassets */; };
@@ -31,7 +30,6 @@
 		EF44B0981B02C63B00654320 /* irisDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44B0971B02C63B00654320 /* irisDetailController.swift */; };
 		EF7B42AF1B0176FF007F4557 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */; };
 		EF7B42B11B0177C3007F4557 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B42B01B0177C3007F4557 /* DataManager.swift */; };
-		EFBCD1E51B01BCC60028441E /* bundledIris.realm in Resources */ = {isa = PBXBuildFile; fileRef = EFBCD1E41B01BCC60028441E /* bundledIris.realm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +51,6 @@
 		003BF9D61AF93D3200058BEF /* irisCodex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = irisCodex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003BF9DA1AF93D3200058BEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		003BF9DB1AF93D3200058BEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		003BF9DE1AF93D3200058BEF /* irisCodex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = irisCodex.xcdatamodel; sourceTree = "<group>"; };
 		003BF9E01AF93D3200058BEF /* BeardedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeardedController.swift; sourceTree = "<group>"; };
 		003BF9E31AF93D3200058BEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		003BF9E51AF93D3200058BEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -79,7 +76,6 @@
 		EF44B0971B02C63B00654320 /* irisDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = irisDetailController.swift; sourceTree = "<group>"; };
 		EF7B42AE1B0176FF007F4557 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = irisCodex/SwiftyJSON.swift; sourceTree = "<group>"; };
 		EF7B42B01B0177C3007F4557 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		EFBCD1E41B01BCC60028441E /* bundledIris.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = bundledIris.realm; sourceTree = "<group>"; };
 		F70C6D0D948AC7C4691EBB4D /* Pods-irisCodex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irisCodex.release.xcconfig"; path = "Pods/Target Support Files/Pods-irisCodex/Pods-irisCodex.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +129,6 @@
 			children = (
 				00DD66421B165F1C002CFDFC /* data */,
 				003BF9E21AF93D3200058BEF /* Main.storyboard */,
-				EFBCD1E41B01BCC60028441E /* bundledIris.realm */,
 				003BF9DB1AF93D3200058BEF /* AppDelegate.swift */,
 				EF7B42B01B0177C3007F4557 /* DataManager.swift */,
 				001F8F6E1AFAD44B001E2B90 /* Iris.swift */,
@@ -146,7 +141,6 @@
 				003BFA041AF93FCD00058BEF /* SideNavigationController.swift */,
 				003BF9E51AF93D3200058BEF /* Images.xcassets */,
 				003BF9E71AF93D3200058BEF /* LaunchScreen.xib */,
-				003BF9DD1AF93D3200058BEF /* irisCodex.xcdatamodeld */,
 				003BF9D91AF93D3200058BEF /* Supporting Files */,
 			);
 			path = irisCodex;
@@ -259,6 +253,7 @@
 		003BF9CE1AF93D3200058BEF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = diligentagility;
 				TargetAttributes = {
@@ -296,7 +291,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFBCD1E51B01BCC60028441E /* bundledIris.realm in Resources */,
 				003BF9E41AF93D3200058BEF /* Main.storyboard in Resources */,
 				003BF9E91AF93D3200058BEF /* LaunchScreen.xib in Resources */,
 				002017131AF9845E00655F6F /* Podfile in Resources */,
@@ -419,7 +413,6 @@
 				EF7B42AF1B0176FF007F4557 /* SwiftyJSON.swift in Sources */,
 				003BF9E11AF93D3200058BEF /* BeardedController.swift in Sources */,
 				006E65E91B1F67EA00F8B1C0 /* TPKeyboardAvoidingScrollView.m in Sources */,
-				003BF9DF1AF93D3200058BEF /* irisCodex.xcdatamodeld in Sources */,
 				003BFA031AF93F2800058BEF /* ENSideMenuNavigationController.swift in Sources */,
 				EF44B0981B02C63B00654320 /* irisDetailController.swift in Sources */,
 				0020170F1AF9567800655F6F /* AllIrisesController.swift in Sources */,
@@ -661,19 +654,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		003BF9DD1AF93D3200058BEF /* irisCodex.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				003BF9DE1AF93D3200058BEF /* irisCodex.xcdatamodel */,
-			);
-			currentVersion = 003BF9DE1AF93D3200058BEF /* irisCodex.xcdatamodel */;
-			path = irisCodex.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 003BF9CE1AF93D3200058BEF /* Project object */;
 }
